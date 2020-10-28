@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:300,400&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", "Roboto", sans-serif;
+  font-size: 14px;
+}
+
+/* p {
+  font-family: Roboto;
+  font-weight: 300;
+} */
+
+/* Header */
+
+.img__logo {
+  width: 25px;
+}
