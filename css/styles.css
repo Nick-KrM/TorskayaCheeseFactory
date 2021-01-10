@@ -205,7 +205,8 @@ img {
 
 .products {
   /* background: #ddc08d; */
-  background: #e3edf7;
+  /* background: #e3edf7; */
+  background: #e7ecf1;
   padding-bottom: 10px;
 }
 
@@ -236,19 +237,21 @@ img {
   max-width: 320px;
   height: 260px;
   /* background: rgba(230, 230, 50, 0.61); */
-  background: linear-gradient(to bottom left, #a13711ce 0%, #fffb1e81 40%);
+  background: linear-gradient(to bottom left, rgb(211, 132, 41) 0%, #fff 40%);
   margin: 20px 10px;
   padding: 20px 15px;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
+  border: 1px solid rgba(0, 0, 0, 0.3);
   box-shadow: 0 5px 20px rgba (0, 0, 0, 0.5);
+  box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.3);
   transition: 0.3s ease-in-out;
 }
 
 .container .content .card__title {
   position: absolute;
-  bottom: -30px;
+  bottom: -25px;
   font-size: 2em;
   color: #66301c;
   font-weight: 500;
@@ -276,7 +279,8 @@ img {
 .container .card .imgBx {
   position: relative;
   min-width: 300px;
-  height: 220px;
+  /* height: 220px; */
+  min-height: 220px;
   top: -30px;
   left: -5px;
   z-index: 1;
@@ -313,7 +317,7 @@ img {
 
 .container .card:hover .content {
   opacity: 1;
-  margin-top: -60px;
+  margin-top: -80px;
   transition-delay: 0.3s;
 }
 
@@ -324,7 +328,6 @@ img {
 .card__btn {
   position: relative;
   width: 140px;
-  /* background: #00a046; */
   background: linear-gradient(to bottom left, #00913f 0%, #16ff7b 100%);
   display: inline-block;
   color: #fff;
@@ -336,6 +339,7 @@ img {
   text-decoration: none;
   letter-spacing: 2px;
   font-weight: 500;
+  border: 1px solid rgb(0, 170, 0);
   opacity: 0;
 }
 
