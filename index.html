@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="./css/styles.css" />
     <link rel="stylesheet" href="./css/media.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
     <title>Торська сироварня</title>
   </head>
   <body>
@@ -69,187 +70,24 @@
           <h2>Наша продукція</h2>
           <p>Сири тверді</p>
         </div>
-        <ul class="container">
-          <li class="cardBx">
-            <div class="card">
-              <div class="imgBx">
-                <img src="./images/Products/cachotta.jpg" alt="" />
+        <ul class="container js-menu" id="js-menu">
+          <template id="menu-template">
+            <li class="cardBx" id="{{id}}">
+              <div class="card">
+                <div class="imgBx">
+                  <img src="{{image}}" alt="{{name}}" class="card__image" />
+                </div>
+                <div class="content">
+                  <h3 class="card__title">{{name}}</h3>
+                  <p>
+                    {{titleDescription}}<br /><br />Ціна -
+                    <span>{{price100}}грн/100г</span>
+                  </p>
+                  <a class="card__btn" href="#">Купити</a>
+                </div>
               </div>
-              <div class="content">
-                <h3 class="card__title">Качотта</h3>
-                <p>
-                  Традиційний італійський сир с визріванням та рожевою скоринкою.<br /><br />Ціна -
-                  <span>40грн/100г</span>
-                </p>
-                <a class="card__btn" href="http://">Купити</a>
-              </div>
-            </div>
-          </li>
-          <li class="cardBx">
-            <div class="card">
-              <div class="imgBx">
-                <img src="./images/all_img/cheese/Скіф.jpg" alt="" />
-              </div>
-              <div class="content">
-                <h3 class="card__title">Скіф</h3>
-                <p>
-                  Традиційний французський сир с визріванням та рожевою скоринкою.<br /><br />Ціна -
-                  <span>40грн/100г</span>
-                </p>
-                <a class="card__btn" href="http://">Купити</a>
-              </div>
-            </div>
-          </li>
-          <!-- <li class="cardBx">
-            <div class="card">
-              <div class="imgBx">
-                <img src="./images/all_img/card-img_cheese.jpg" alt="" />
-              </div>
-              <div class="content">
-                <h3 class="card__title">Каммамбер</h3>
-                <p>
-                  Традиційний французський сир с визріванням та білою скоринкою.<br /><br />Ціна -
-                  <span>40грн/100г</span>
-                </p>
-                <a class="card__btn" href="http://">Купити</a>
-              </div>
-            </div>
-          </li> -->
-          <!-- <li class="cardBx">
-            <div class="card">
-              <div class="imgBx">
-                <img src="./images/all_img/card-img_cheese.jpg" alt="" />
-              </div>
-              <div class="content">
-                <h3 class="card__title">Люторс</h3>
-                <p>
-                  Авторський сир за принципом каммамбера з білою скоринкою.<br /><br />Ціна -
-                  <span>40грн/100г</span>
-                </p>
-                <a class="card__btn" href="http://">Купити</a>
-              </div>
-            </div>
-          </li> -->
-          <li class="cardBx">
-            <div class="card">
-              <div class="imgBx">
-                <img src="./images/all_img/cheese/Реблошон.jpg" alt="" />
-              </div>
-              <div class="content">
-                <h3 class="card__title">Реблошон</h3>
-                <p>
-                  Традиційний французський сир с визріванням та біло-рожевою скоринкою.<br /><br />Ціна -
-                  <span>40грн/100г</span>
-                </p>
-                <a class="card__btn" href="http://">Купити</a>
-              </div>
-            </div>
-          </li>
-          <li class="cardBx">
-            <div class="card">
-              <div class="imgBx">
-                <img src="./images/all_img/cheese/Карачун.jpg" alt="" />
-              </div>
-              <div class="content">
-                <h3 class="card__title">Карачун</h3>
-                <p>
-                  Авторський сир с визріванням та біло-рожевою скоринкою.<br /><br />Ціна -
-                  <span>40грн/100г</span>
-                </p>
-                <a class="card__btn" href="http://">Купити</a>
-              </div>
-            </div>
-          </li>
-          <li class="cardBx">
-            <div class="card">
-              <div class="imgBx">
-                <img src="./images/all_img/cheese/Гауда.jpg" alt="" />
-              </div>
-              <div class="content">
-                <h3 class="card__title">Гауда</h3>
-                <p>
-                  Традиційний голандський сир с визріванням.<br /><br />Ціна -
-                  <span>45грн/100г</span>
-                </p>
-                <a class="card__btn" href="http://">Купити</a>
-              </div>
-            </div>
-          </li>
-          <li class="cardBx">
-            <div class="card">
-              <div class="imgBx">
-                <img src="./images/all_img/cheese/Чедер.jpg" alt="" />
-              </div>
-              <div class="content">
-                <h3 class="card__title">Чеддер</h3>
-                <p>
-                  Традиційний англійський сир с визріванням та бандажом.<br /><br />Ціна -
-                  <span>50грн/100г</span>
-                </p>
-                <a class="card__btn" href="http://">Купити</a>
-              </div>
-            </div>
-          </li>
-          <li class="cardBx">
-            <div class="card">
-              <div class="imgBx">
-                <img src="./images/all_img/cheese/Кайрфіллі.jpg" alt="" />
-              </div>
-              <div class="content">
-                <h3 class="card__title">Кайрфіллі</h3>
-                <p>
-                  Традиційний англійський сир с визріванням .<br /><br />Ціна -
-                  <span>40грн/100г</span>
-                </p>
-                <a class="card__btn" href="http://">Купити</a>
-              </div>
-            </div>
-          </li>
-          <!-- <li class="cardBx">
-            <div class="card">
-              <div class="imgBx">
-                <img src="./images/all_img/card-img_cheese.jpg" alt="" />
-              </div>
-              <div class="content">
-                <h3 class="card__title">Торський сир</h3>
-                <p>
-                  Свіжій ніжний молочний сир без визрівання (аналог Осетинського).<br /><br />Ціна -
-                  <span>28грн/100г</span>
-                </p>
-                <a class="card__btn" href="http://">Купити</a>
-              </div>
-            </div>
-          </li> -->
-          <!-- <li class="cardBx">
-            <div class="card">
-              <div class="imgBx">
-                <img src="./images/all_img/card-img_cheese.jpg" alt="" />
-              </div>
-              <div class="content">
-                <h3 class="card__title">Маасдам</h3>
-                <p>
-                  Традиційний голандський сир с визріванням.<br /><br />Ціна -
-                  <span>45грн/100г</span>
-                </p>
-                <a class="card__btn" href="http://">Купити</a>
-              </div>
-            </div>
-          </li> -->
-          <li class="cardBx">
-            <div class="card">
-              <div class="imgBx">
-                <img src="./images/all_img/cheese/Мотерей_Джек.jpg" alt="" />
-              </div>
-              <div class="content">
-                <h3 class="card__title">Монтеррей Джек</h3>
-                <p>
-                  Традиційний амеріканський сир з папрікою с визріванням.<br /><br />Ціна -
-                  <span>45грн/100г</span>
-                </p>
-                <a class="card__btn" href="http://">Купити</a>
-              </div>
-            </div>
-          </li>
+            </li>
+          </template>
         </ul>
       </section>
       <!-- <section class="work" id="work">
@@ -301,12 +139,12 @@
         <h2>Приєднуйтесь до нас в соціальних мережах</h2>
         <div class="social-media">
           <a href="https://www.facebook.com/profile.php?id=100061161994848" target="_blank"><i class="fab fa-facebook"></i></a>
-          <!-- <a href="#" target="_blank"><i class="fab fa-twitter"></i></a> -->
           <a href="https://www.instagram.com/sirovarnia/?hl=ru" target="_blank"><i class="fab fa-instagram"></i></a>
-          <!-- <a href="#" target="_blank"><i class="fab fa-youtube"></i></a> -->
           <a href="#" target="_blank"><i class="fab fa-telegram"></i></a>
-          <!-- <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a> -->
-          <!-- <a href="#" target="_blank"><i class="fab fa-viber"></i></a> -->
+          <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-viber"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
         </div>
       </section>
       <section class="contact" id="contact">
@@ -325,8 +163,8 @@
                 <div class="text">
                   <h3>Адреса:</h3>
                   <p>
-                    34600 Cheese Factory Road, <br />Donetskaya obl, Kramatorsk, <br />
-                    какие-то данные
+                    Слов'янський район, <br />пос. Карпiвка вул.Степна 2/23 <br />
+                  (недалеко от автозаправки Parallel)
                   </p>
                 </div>
               </div>
@@ -368,6 +206,9 @@
         <p>Copyright © Nikita_KrM. All Right Reserved webdevafter30@gmail.com</p>
       </div>
     </footer>
+    <script src="./scripts/AvailabilityСheck.js" type="module"></script>
+    <script src="./scripts/products.js" type="module"></script>
+    <script src="./scripts/implement.js" type="module"></script>
     <script type="text/javascript">
       window.addEventListener("scroll", function () {
         const header = document.querySelector("header");
