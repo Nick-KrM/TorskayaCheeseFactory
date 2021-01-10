@@ -37,7 +37,7 @@ section {
   left: 0;
   display: block;
   content: "";
-  background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.25));
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
   width: 100%;
   min-height: 100vh;
   z-index: 1;
@@ -83,7 +83,7 @@ section {
 .btn {
   position: relative;
   /* background: #2196f3; */
-  background: linear-gradient(to bottom left, #fbff1e 0%, #a13711 100%);
+  background: linear-gradient(to bottom left, #008000 0%, #adff2f 100%);
   display: inline-block;
   color: #fff;
   margin-top: 20px;
@@ -97,7 +97,7 @@ section {
 }
 
 .btn:hover {
-  background: linear-gradient(to bottom left, #fbff2a 20%, #a03d18 100%);
+  background: linear-gradient(to bottom left, #adff2f 0%, #008000 100%);
 }
 
 /* HEADER */
@@ -202,7 +202,7 @@ img {
 .products {
   /* background: #ddc08d; */
   background: #e3edf7;
-  padding-bottom: 0px;
+  padding-bottom: 10px;
 }
 
 .products .heading.white {
@@ -407,8 +407,7 @@ img {
 
 .socialMediaIcons {
   background: #e3edf7;
-  /* height: 60vh; */
-  padding-top: 0px;
+  /* padding-top: 0px; */
 }
 
 .socialMediaIcons h2 {
