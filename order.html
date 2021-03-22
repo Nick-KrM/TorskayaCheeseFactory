@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link rel="icon" type="image/png" href="./images/Logo&Favicons/favicon-32x32.png" />
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <!-- <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" /> -->
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/media.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+    <title>Торська сироварня</title>
+  </head>
+  <body data-page="order">
+    <header>
+      <a href="index.html#home" class="logo">Торська сироварня</a>
+      <div class="toggle"></div>
+      <ul class="nav">
+        <li><a href="index.html#home">Головна</a></li>
+        <li><a href="about.html">Детальніше про нас</a></li>
+        <li><a href="index.html#products">Додати ще</a></li>
+        <li><a href="index.html#socialMediaIcons">Соціальні мережі</a></li>
+        <li><a href="cart.html">Кошик</a></li>
+      </ul>
+    </header>
+    <main>
+      <section class="order__section">
+        <div class="container">
+          <!-- <h1>Ваше замовлення:</h1> -->
+          <!-- <div id="order-message" class="alert alert-info"></div> -->
+          <div class="formBx">
+            <form action="">
+              <h3>Ваше замовлення</h3>
+              <input type="text" name="" placeholder="Прізвище ім'я по батькові" />
+              <input type="email" name="" placeholder="Email:" id="" />
+              <!-- <label for="online_phone" style="color: white">Телефон:</label> -->
+              <input
+                id="online_phone"
+                name="phone"
+                type="tel"
+                maxlength="50"
+                autofocus="autofocus"
+                required="required"
+                value="+38(___)___-__-__"
+                pattern="\+38\s?[\(]{0,1}\s?\d{3}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}"
+                placeholder="+38(___)___-__-__"
+              />
+              <input type="text" name="" placeholder="Мiсто:" id="" />
+              <input type="text" name="" placeholder="Номер відділення Нової Пошти" id="" />
+              <textarea placeholder="Коментар" name="" id="" cols="4" rows="4"></textarea>
+              <input type="submit" value="Замовити" />
+            </form>
+          </div>
+          <!-- <form id="order-form" class="form-horizontal" role="form">
+            <div class="form-group">
+              <label for="input-name" class="col-sm-2 control-label">Ваше имя *</label>
+              <div class="col-sm-6">
+                <input type="text" class="form-control" id="input-name" name="name" placeholder="Ваше имя" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="input-email" class="col-sm-2 control-label">Email *</label>
+              <div class="col-sm-6">
+                <input type="email" class="form-control" id="input-email" name="email" placeholder="Email" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="input-phone" class="col-sm-2 control-label">Телефон</label>
+              <div class="col-sm-6">
+                <input type="text" class="form-control" id="input-phone" name="phone" placeholder="Телефон" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Способ доставки</label>
+              <div class="col-sm-6">
+                <input type="hidden" name="delivery_type" id="delivery-type" value="" />
+                <input type="hidden" name="delivery_summa" id="delivery-summa" value="0" />
+                <input type="hidden" name="full_summa" id="full-summa" value="0" />
+                <div class="radio">
+                  <label
+                    ><input
+                      type="radio"
+                      name="delivery"
+                      class="js-delivery-type"
+                      data-type="Самовывоз"
+                      data-summa="0"
+                      checked
+                    />Самовывоз (бесплатно)</label
+                  >
+                </div>
+                <div class="radio">
+                  <label
+                    ><input
+                      type="radio"
+                      name="delivery"
+                      class="js-delivery-type"
+                      data-type="В пределах КАД"
+                      data-summa="200"
+                    />Новая Почта</label
+                  >
+                </div>
+                <div class="radio">
+                  <label
+                    ><input
+                      type="radio"
+                      name="delivery"
+                      class="js-delivery-type"
+                      data-type="Почта России"
+                      data-summa="300"
+                    />Justin</label
+                  >
+                </div>
+                <br />
+                <div id="alert-delivery" class="alert alert-info"></div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="input-address" class="col-sm-2 control-label">Город доставки</label>
+              <div class="col-sm-6">
+                <textarea class="form-control" id="input-address" name="address" placeholder="Адрес доставки" row="3"></textarea>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="input-address" class="col-sm-2 control-label">Отделение Новой Почты/Justin</label>
+              <div class="col-sm-6">
+                <textarea
+                  class="form-control"
+                  id="input-delivery"
+                  name="address"
+                  placeholder="Номер отделения"
+                  row="3"
+                ></textarea>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="input-message" class="col-sm-2 control-label">Комментарий</label>
+              <div class="col-sm-6">
+                <textarea
+                  class="form-control"
+                  id="input-message"
+                  name="message"
+                  placeholder="Дополнительная информация"
+                  row="3"
+                ></textarea>
+                <br />
+                <div id="alert-validation" class="alert alert-danger hidden">
+                  <button type="button" class="close js-close-alert">&times;</button>
+                  <strong>Ошибка!</strong> Заполните обязательные поля, отмеченные *
+                </div>
+                <div id="alert-order-done" class="alert alert-success hidden">
+                  <button type="button" class="close js-close-alert">&times;</button>
+                  <strong>Спасибо за заказ!</strong> Скоро мы с Вами свяжемся
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-offset-2 col-sm-6">
+                <button id="order-btn" type="submit" class="btn btn-primary">Отправить заказ</button>
+              </div>
+            </div>
+          </form> -->
+        </div>
+      </section>
+      <section class="banner banner__dark"></section>
+    </main>
+
+    <script src="./scripts/products.js" type="module"></script>
+    <script src="./scripts/phoneCheck.js" type="module"></script>
+    <script src="./scripts/windowScroll.js" type="module"></script>
+  </body>
+</html>
