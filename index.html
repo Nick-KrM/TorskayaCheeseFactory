@@ -49,9 +49,9 @@
           <h2>Наша продукція</h2>
           <p>Сири тверді</p>
         </div>
-        <ul class="container js-menu" id="js-menu">
+        <ul class="container allGoods js-menu" id="js-menu">
           <template id="menu-template">
-            <li class="cardBx" id="{{id}}">
+            <li class="cardBx">
               <div class="card">
                 <div class="imgBx">
                   <img src="{{image}}" alt="{{name}}" class="card__image" />
@@ -62,7 +62,7 @@
                     {{titleDescription}}<br /><br />Ціна -
                     <span>{{price100}}грн/100г</span>
                   </p>
-                  <button class="card__btn">Купити</button>
+                  <button id="{{id}}" class="card__btn">Купити</button>
                 </div>
               </div>
             </li>
@@ -360,7 +360,7 @@
         <div class="carticon__text"></div>
         <div class="carticon__wrapper">
           <div class="carticon__imgWrap">
-            <svg style="stroke: #ffffff" class="carticon__img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+            <svg style="stroke: #ffffff" class="carticon__img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 64 64">
               <path fill="none" stroke-width="2" stroke-miterlimit="10" d="M44 18h10v45H10V18h10z"></path>
               <path
                 fill="none"
@@ -379,9 +379,11 @@
         <p>Copyright © Nikita_KrM. All Right Reserved webdevafter30@gmail.com</p>
       </div>
     </footer>
+    <!-- <script src="./scripts/refs.js" type="module"></script> -->
     <script src="./scripts/AvailabilityСheck.js" type="module"></script>
     <script src="./scripts/products.js" type="module"></script>
-    <script src="./scripts/implement.js" type="module"></script>
+    <script src="./scripts/mainImplement.js" type="module"></script>
+    <script src="./scripts/cart.js" type="module"></script>
     <!-- <script type="text/javascript">
       window.addEventListener("scroll", function () {
         const header = document.querySelector("header");
