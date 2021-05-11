@@ -4,12 +4,16 @@ import goodsArray from './products.js';
 const allGoods = documentRefs.allGoods;
 const cartIconCounter = documentRefs.cartIconCounter;
 
-let cartData = [];
+let cartData;
+console.log(cartData);
+updateData();
+console.log(cartData);
+cartIconCounter.textContent = cartData.length;
 
-allGoods.addEventListener('click', handleBtnClick);
 
 function handleBtnClick(e) {
     e.preventDefault();
+    updateData();
 
     const target = e.target;
 
@@ -17,38 +21,38 @@ function handleBtnClick(e) {
         return
     };
 
-    const savedGoods = localStorage.getItem('cart');
+    const newProduct = getProdById(goodsArray, target.id);
 
-    if (savedGoods) {
-        const parsedGoods = JSON.parse(savedGoods);
-        console.log('Товары в массиве parsedGoods:',parsedGoods);
-        console.log('Товары в массиве savedGoods:' ,savedGoods);
-        console.log('Товары в массиве cartData:' ,cartData);
-        cartData.push(parsedGoods);
-    }
+    if (cartData.length === 0) {
+        cartData.push(newProduct);
+        saveData();
 
-    const newProd = getProdById(goodsArray, target.id);
+    } else {
+        const requiredEl = getProdById(cartData, target.id);
+        console.log(requiredEl);
+        console.log(!requiredEl);
 
-    if (cartData.includes(newProd)) {
-        console.log('Товар уже в корзине!');
-        return
+        if (!requiredEl) {
+            cartData.push(newProduct);
+            saveData();
+            // console.log(cartData.includes(newProduct.id));
+            // console.log(`такого объекта ${newProduct.id} нет - пушим`);
+        } else {
+            // console.log('Такой объект уже есть - выходим');
+            alert(`Товар уже в корзине!`);
+        };
     };
 
-    cartData.push(newProd);
-
-    console.log('Товары в массиве cartData, при первом добовлении:' ,cartData);
-
-
-    // Сохраняю данные в локал
-    localStorage.setItem('cart', JSON.stringify(cartData));
-
+    // console.log('cartData после всех проверок:', cartData);
 
     // Отображение кол-ва продуктов в корзине
     cartIconCounter.textContent = cartData.length;
 };
 
 // ф-я поиска id при клике по кнопке "купить"
-const getProdById = (arr, id) => arr.find(x => x.id === id);
+const getProdById = (arr, id) => {
+    return arr.find(x => x.id === id);
+};
 
 //ф-я получения данных из локал
 function updateData() {
@@ -68,3 +72,5 @@ function clearData() {
     saveData();
     return cartData;
 };
+
+allGoods.addEventListener('click', handleBtnClick);
