@@ -654,6 +654,22 @@ a:hover .fa-telegram {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* ↓ Carticon animation ↓ */
+.cartAnim {
+  /* transition: 1s; */
+  text-align: center;
+  animation: heartbeat 0.5s cubic-bezier(0.245, 0.325, 0.51, 1.305) infinite alternate;
+  /* font-size: 160px; */
+  margin-top: 60px;
+  color: darken(#fb7e6e, 30%);
+}
+
+@keyframes heartbeat {
+  to {
+    transform: scale(1.15);
+  }
+}
+
 /* Cart.html */
 
 .cart__section,
@@ -788,4 +804,9 @@ a:hover .fa-telegram {
   position: absolute;
   min-width: 100%;
   bottom: 0px;
+}
+
+/* Для сокрытия элементов */
+.hidden {
+  display: none;
 }

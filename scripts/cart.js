@@ -3,12 +3,12 @@ import goodsArray from './products.js';
 
 const allGoods = documentRefs.allGoods;
 const cartIconCounter = documentRefs.cartIconCounter;
+const cartIconBlock = documentRefs.cartIconBlock;
 
 let cartData;
-console.log(cartData);
-updateData();
-console.log(cartData);
-cartIconCounter.textContent = cartData.length;
+updateData(); // обновляю данные из хранилища
+counterItemsCart(); // отражение кол-ва товаров в корзине
+cartVisibility(); // прячу или показываю корзину, в зависимости от наличия в ней товаров
 
 
 function handleBtnClick(e) {
@@ -17,6 +17,7 @@ function handleBtnClick(e) {
 
     const target = e.target;
 
+    // ловлю клик по кнопке "купить"
     if (target.nodeName !== "BUTTON") {
         return
     };
@@ -29,24 +30,19 @@ function handleBtnClick(e) {
 
     } else {
         const requiredEl = getProdById(cartData, target.id);
-        console.log(requiredEl);
-        console.log(!requiredEl);
 
         if (!requiredEl) {
             cartData.push(newProduct);
             saveData();
-            // console.log(cartData.includes(newProduct.id));
-            // console.log(`такого объекта ${newProduct.id} нет - пушим`);
+            console.log(`Товар летит в корзину`);
         } else {
-            // console.log('Такой объект уже есть - выходим');
-            alert(`Товар уже в корзине!`);
+            console.log('Такой объект уже есть - выходим');
+            // alert(`Товар уже в корзине!`);
         };
     };
 
-    // console.log('cartData после всех проверок:', cartData);
-
-    // Отображение кол-ва продуктов в корзине
-    cartIconCounter.textContent = cartData.length;
+    counterItemsCart();
+    cartVisibility();
 };
 
 // ф-я поиска id при клике по кнопке "купить"
@@ -71,6 +67,21 @@ function clearData() {
     cartData = [];
     saveData();
     return cartData;
+};
+
+// ф-я видимости иконки корзины
+function cartVisibility() {
+    if (cartData.length === 0) {
+        console.log(`Нет товаров в корзине, прячем корзину`);
+        cartIconBlock.classList.add('hidden');
+    } else {
+        cartIconBlock.classList.remove('hidden');
+    };
+};
+
+// ф-я отображения значения кол-ва товаров в корзине
+function counterItemsCart() {
+    cartIconCounter.textContent = cartData.length;
 };
 
 allGoods.addEventListener('click', handleBtnClick);
