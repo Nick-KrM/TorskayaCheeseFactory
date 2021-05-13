@@ -1,18 +1,45 @@
 import documentRefs from './refs.js';
-import { getProdById, updateData, saveData, clearData, cartVisibility, counterItemsCart } from './cart.js';
+import { getProdById, updateData, saveData, clearData, cartVisibility, counterItemsCart } from './cartIcon.js';
+const prodListCart = documentRefs.prodListCart;
+// console.log(prodListCart);
 
 let selectedProdCart;
 selectedProdCart = updateData();
 
-console.log(selectedProdCart);
-// const itemsArray = getGoodsInStock;
+const cartItems = document.querySelector('#cart-template').innerHTML.trim();
 
-// const source = document.querySelector('#menu-template').innerHTML.trim();
+const cartTemplate = Handlebars.compile(cartItems);
 
-// const template = Handlebars.compile(source);
+const cartMarkup = selectedProdCart.map(item => cartTemplate(item)).join('');
 
-// const markup = itemsArray.map(item => template(item)).join('');
-//   console.log(markup);
+const cartItemsContainer = documentRefs.prodListCart;
 
-// const container = document.querySelector('#js-menu');
-// container.innerHTML = markup;
+function weigthChangeBtn(e) {
+    e.preventDefault();
+    updateData();
+
+    const target = e.target.dataset.btnAssignment;
+
+    if (target === undefined) {
+        return
+    };
+
+    if (target === 'add') {
+        console.log(`Добавляем вес кнопкой: ${target}`);
+    };
+
+    if (target === 'reduce') {
+        console.log(`Уменьшаем вес кнопкой: ${target}`);
+    };
+
+    if (target === 'delete') {
+        console.log(`Удаляем товар из спискаы: ${target}`);
+    };
+};
+
+// Вешаю слушателя на списко товаров, если он не пустой.
+if (prodListCart !== null) {
+    prodListCart.addEventListener('click', weigthChangeBtn);
+};
+
+cartItemsContainer.insertAdjacentHTML('beforeend', cartMarkup);

@@ -4,11 +4,11 @@ const documentRefs = {
     cardBx: document.querySelectorAll('.cardBx'),
     cartIconCounter: document.querySelector('.carticon__counter'),
     cartIconBlock: document.querySelector('.carticon__showed'),
-    cartIconClose: document.querySelectorAll('.icon-close'),
+    prodListCart: document.querySelector('.cartOfAllGoods'),
     productChangeWeight: document.querySelectorAll('.product-plusminus'),
     prodIconPlusBtn: document.querySelectorAll('.icon-plus'),
     prodIconMinusBtn: document.querySelectorAll('.icon-minus'),
-    profIconCloseBtn: document.querySelectorAll('.icon-close')
+    prodIconCloseBtn: document.querySelectorAll('.icon-close')
 };
 
 export default documentRefs;

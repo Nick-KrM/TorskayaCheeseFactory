@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="./css/styles.css" />
     <link rel="stylesheet" href="./css/media.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
-    
+
     <title>Торська сироварня</title>
   </head>
   <body data-page="cart banner banner__dark">
@@ -55,60 +55,34 @@
         <div class="container cart__container">
           <h3 class="cart__title">Ваші товари:</h3>
 
-          <ul class="cartOfAllGoods">
-            <li class="cart__product" data-cart-product-i="0">
-              <div class="product-thumb">
-                <img class="prodPrevImg" src="./images/all_img/cheese/Монтеррей Джек.jpg" alt="" />
-              </div>
-              <div class="product-title">
-                <a style="color: inherit" target="_blank" href="#">Монтерей Джек</a>
-                <p class="prodWeight">Обрана вага: <span>1500</span> г</p>
-              </div>
-
-              <div class="product-plusminus">
-                <svg class="icon icon-plus">
-                  <use xlink:href="./images/Logo&Favicons/sprite-cart.svg#icon-plus"></use>
-                </svg>
-                <span class="product-quantity">100г</span>
-                <svg class="icon icon-minus">
-                  <use xlink:href="./images/Logo&Favicons/sprite-cart.svg#icon-minus"></use>
-                </svg>
-              </div>
-              <div class="product-amount"><span class="prodCost">675</span>грн.</div>
-              <div class="product-del">
-                <svg class="icon icon-close">
-                  <use xlink:href="./images/Logo&Favicons/sprite-cart.svg#icon-close"></use>
-                </svg>
-              </div>
-            </li>
-            <li class="cart__product" data-cart-product-i="0">
-              <div class="product-thumb">
-                <img class="prodPrevImg" src="./images/all_img/cheese/Качотта.jpg" alt="" />
-              </div>
-              <div class="product-title">
-                <a target="_blank" href="#">Качотта</a>
-                <div class="product-title__option">
-                  <div class="prodWeight">Обрана вага: <span>500</span> г</div>
+          <ul class="cartOfAllGoods" id="js-cartMenu">
+            <template id="cart-template">
+              <li class="cart__product" id="{{id}}">
+                <div class="product-thumb">
+                  <img class="prodPrevImg" src="{{preImg}}" alt="картинка {{name}}" />
                 </div>
-              </div>
-              <div class="product-plusminus t-descr t-descr_sm">
-                <span class="product-minus"
-                  ><svg class="icon icon-plus">
-                    <use xlink:href="./images/Logo&Favicons/sprite-cart.svg#icon-plus"></use></svg></span
-                ><span class="product-quantity">100г</span
-                ><span class="product-plus"
-                  ><svg class="icon icon-minus">
-                    <use xlink:href="./images/Logo&Favicons/sprite-cart.svg#icon-minus"></use>
+                <div class="product-title">
+                  <a style="color: inherit" target="_blank" href="#">{{name}}</a>
+                  <p class="product__title--text">Обрана вага: <span class="product__title--weigth">{{product-weight}}</span>г</p>
+                </div>
+
+                <div class="product-plusminus">
+                  <svg class="icon icon-plus">
+                    <use data-btn-assignment="add" xlink:href="./images/Logo&Favicons/sprite-cart.svg#icon-plus"></use>
                   </svg>
-                </span>
-              </div>
-              <div class="product-amount t-descr t-descr_sm"><span class="prodCost">200</span>грн.</div>
-              <div class="product-del">
-                <svg class="icon icon-close">
-                  <use xlink:href="./images/Logo&Favicons/sprite-cart.svg#icon-close"></use>
-                </svg>
-              </div>
-            </li>
+                  <span class="product-quantity">100г</span>
+                  <svg class="icon icon-minus">
+                    <use data-btn-assignment="reduce" xlink:href="./images/Logo&Favicons/sprite-cart.svg#icon-minus"></use>
+                  </svg>
+                </div>
+                <div class="product-amount"><span class="prodCost">{{totalPriceSelectedItem}}</span>грн.</div>
+                <div class="product-del">
+                  <svg class="icon icon-close">
+                    <use data-btn-assignment="delete" xlink:href="./images/Logo&Favicons/sprite-cart.svg#icon-close"></use>
+                  </svg>
+                </div>
+              </li>
+            </template>
           </ul>
 
           <div class="cartOfAllGoods-totalAmount">

@@ -93,4 +93,5 @@ function counterItemsCart() {
 if (allGoods !== null) {
     allGoods.addEventListener('click', handleBtnClick);
 };
+
 export { getProdById, updateData, saveData, clearData, cartVisibility, counterItemsCart };
