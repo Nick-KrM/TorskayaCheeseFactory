@@ -11,8 +11,3 @@ const markup = itemsArray.map(item => template(item)).join('');
 
 const container = document.querySelector('#js-menu');
 container.innerHTML = markup;
-
-//возвращаем данные из локл
-function getData() {
-    return cartData;
-};

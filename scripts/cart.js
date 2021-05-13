@@ -6,6 +6,7 @@ const cartIconCounter = documentRefs.cartIconCounter;
 const cartIconBlock = documentRefs.cartIconBlock;
 
 let cartData;
+
 updateData(); // обновляю данные из хранилища
 counterItemsCart(); // отражение кол-ва товаров в корзине
 cartVisibility(); // прячу или показываю корзину, в зависимости от наличия в ней товаров
@@ -71,17 +72,25 @@ function clearData() {
 
 // ф-я видимости иконки корзины
 function cartVisibility() {
-    if (cartData.length === 0) {
-        console.log(`Нет товаров в корзине, прячем корзину`);
-        cartIconBlock.classList.add('hidden');
-    } else {
-        cartIconBlock.classList.remove('hidden');
-    };
+    if (cartIconCounter !== null) {
+
+        if (cartData.length === 0) {
+            console.log(`Нет товаров в корзине, прячем корзину`);
+            cartIconBlock.classList.add('hidden');
+        } else {
+            cartIconBlock.classList.remove('hidden');
+        };
+    }
 };
 
 // ф-я отображения значения кол-ва товаров в корзине
 function counterItemsCart() {
-    cartIconCounter.textContent = cartData.length;
+    if (cartIconCounter !== null) {
+        cartIconCounter.textContent = cartData.length;
+    }
 };
 
-allGoods.addEventListener('click', handleBtnClick);
+if (allGoods !== null) {
+    allGoods.addEventListener('click', handleBtnClick);
+};
+export { getProdById, updateData, saveData, clearData, cartVisibility, counterItemsCart };

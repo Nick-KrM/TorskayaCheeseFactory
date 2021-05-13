@@ -808,5 +808,5 @@ a:hover .fa-telegram {
 
 /* Для сокрытия элементов */
 .hidden {
-  display: none;
+  z-index: -9999;
 }
