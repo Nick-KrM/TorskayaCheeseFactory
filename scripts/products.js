@@ -7,12 +7,13 @@ const goods = [
         "description": "Традиційний італійський сир с визріванням та рожевою скоринкою.",
         "price100": 40,
         "price300": 120,
-        "totalPriceSelectedItem": 150,
-        "product-weight": 300,
+        "totalPriceSelectedItem": 120,
+        "productWeight": 300,
         "minProductWeight": 300,
         "amount": 1,
         "image": "./images/all_img/cheese/Качотта.jpg",
-        "preImg": "./images/all_img/cheese/Качотта-s.jpg"
+        "preImg": "./images/all_img/cheese/Качотта-s.jpg",
+        "iconMinusStatus": "notActive"
     },
     {
         "availability": 1,
@@ -22,12 +23,13 @@ const goods = [
         "description": "Карачун - це авторський сир нашого Сировара. Виготовлений з коров'ячого молока, має приємний ніжний вершковий смак.Термін дозрівання не менше одного місяця. Добре смакує з сухими винами.",
         "price100": 40,
         "price300": 120,
-        "totalPriceSelectedItem": 150,
-        "product-weight": 300,
+        "totalPriceSelectedItem": 120,
+        "productWeight": 300,
         "minProductWeight": 300,
         "amount": 1,
         "image": "./images/all_img/cheese/Карачун.jpg",
-        "preImg": "./images/all_img/cheese/Карачун-s.jpg"
+        "preImg": "./images/all_img/cheese/Карачун-s.jpg",
+        "iconMinusStatus": "notActive"
     },
     {
         "availability": 1,
@@ -37,12 +39,13 @@ const goods = [
         "description": "Традиційний французський сир с визріванням та рожевою скоринкою.",
         "price100": 40,
         "price300": 120,
-        "totalPriceSelectedItem": 150,
-        "product-weight": 300,
+        "totalPriceSelectedItem": 120,
+        "productWeight": 300,
         "minProductWeight": 300,
         "amount": 1,
         "image": "./images/all_img/cheese/Скіф.jpg",
-        "preImg": "./images/all_img/cheese/Скіф-s.jpg"
+        "preImg": "./images/all_img/cheese/Скіф-s.jpg",
+        "iconMinusStatus": "notActive"
     },
     {
         "availability": 1,
@@ -52,12 +55,13 @@ const goods = [
         "description": "Традиційний французський сир с визріванням та біло-рожевою скоринкою.",
         "price100": 40,
         "price300": 120,
-        "totalPriceSelectedItem": 150,
-        "product-weight": 300,
+        "totalPriceSelectedItem": 120,
+        "productWeight": 300,
         "minProductWeight": 300,
         "amount": 1,
         "image": "./images/all_img/cheese/Реблошон.jpg",
-        "preImg": "./images/all_img/cheese/Реблошон-s.jpg"
+        "preImg": "./images/all_img/cheese/Реблошон-s.jpg",
+        "iconMinusStatus": "notActive"
     },
     {
         "availability": 1,
@@ -67,12 +71,13 @@ const goods = [
         "description": "Традиційний голандський сир с визріванням.",
         "price100": 45,
         "price300": 135,
-        "totalPriceSelectedItem": 150,
-        "product-weight": 300,
+        "totalPriceSelectedItem": 135,
+        "productWeight": 300,
         "minProductWeight": 300,
         "amount": 1,
         "image": "./images/all_img/cheese/Гауда.jpg",
-        "preImg": "./images/all_img/cheese/Гауда-s.jpg"
+        "preImg": "./images/all_img/cheese/Гауда-s.jpg",
+        "iconMinusStatus": "notActive"
     },
     {
         "availability": 1,
@@ -82,12 +87,13 @@ const goods = [
         "description": "Традиційний англійський сир с визріванням.",
         "price100": 40,
         "price300": 120,
-        "totalPriceSelectedItem": 150,
-        "product-weight": 300,
+        "totalPriceSelectedItem": 120,
+        "productWeight": 300,
         "minProductWeight": 300,
         "amount": 1,
         "image": "./images/all_img/cheese/Кайрфіллі.jpg",
-        "preImg": "./images/all_img/cheese/Кайрфіллі-s.jpg"
+        "preImg": "./images/all_img/cheese/Кайрфіллі-s.jpg",
+        "iconMinusStatus": "notActive"
     },
     {
         "availability": 1,
@@ -98,11 +104,12 @@ const goods = [
         "price100": 50,
         "price300": 150,
         "totalPriceSelectedItem": 150,
-        "product-weight": 300,
+        "productWeight": 300,
         "minProductWeight": 300,
         "amount": 1,
         "image": "./images/all_img/cheese/Чеддер.jpg",
-        "preImg": "./images/all_img/cheese/Чеддер-s.jpg"
+        "preImg": "./images/all_img/cheese/Чеддер-s.jpg",
+        "iconMinusStatus": "notActive"
     },
     {
         "availability": 1,
@@ -112,12 +119,13 @@ const goods = [
         "description": "Традиційний амеріканський сир з папрікою с визріванням.",
         "price100": 45,
         "price300": 135,
-        "totalPriceSelectedItem": 150,
-        "product-weight": 300,
+        "totalPriceSelectedItem": 135,
+        "productWeight": 300,
         "minProductWeight": 300,
         "amount": 1,
         "image": "./images/all_img/cheese/Монтеррей Джек.jpg",
-        "preImg": "./images/all_img/cheese/Монтеррей Джек-s.jpg"
+        "preImg": "./images/all_img/cheese/Монтеррей Джек-s.jpg",
+        "iconMinusStatus": "notActive"
     },
     {
         "availability": 0,
@@ -127,12 +135,13 @@ const goods = [
         "description": "Свіжій ніжний молочний сир без визрівання (аналог Осетинського).",
         "price100": 30,
         "price300": 90,
-        "totalPriceSelectedItem": 150,
-        "product-weight": 300,
+        "totalPriceSelectedItem": 90,
+        "productWeight": 300,
         "minProductWeight": 300,
         "amount": 1,
         "image": "./images/all_img/cheese/Торський сир.jpg",
-        "preImg": "./images/all_img/cheese/Торський сир-s.jpg"
+        "preImg": "./images/all_img/cheese/Торський сир-s.jpg",
+        "iconMinusStatus": "notActive"
     },
     {
         "availability": 0,
@@ -142,12 +151,13 @@ const goods = [
         "description": "Традиційний голандський сир с визріванням.",
         "price100": 45,
         "price300": 135,
-        "totalPriceSelectedItem": 150,
-        "product-weight": 300,
+        "totalPriceSelectedItem": 135,
+        "productWeight": 300,
         "minProductWeight": 300,
         "amount": 1,
         "image": "./images/all_img/cheese/Маасдам.jpg",
-        "preImg": "./images/all_img/cheese/Маасдам-s.jpg"
+        "preImg": "./images/all_img/cheese/Маасдам-s.jpg",
+        "iconMinusStatus": "notActive"
     },
     {
         "availability": 0,
@@ -157,12 +167,13 @@ const goods = [
         "description": "Традиційний французський сир с визріванням та білою скоринкою.",
         "price100": 40,
         "price300": 120,
-        "totalPriceSelectedItem": 150,
-        "product-weight": 300,
+        "totalPriceSelectedItem": 120,
+        "productWeight": 300,
         "minProductWeight": 300,
         "amount": 1,
         "image": "./images/all_img/cheese/Каммамбер.jpg",
-        "preImg": "./images/all_img/cheese/Каммамбер-s.jpg"
+        "preImg": "./images/all_img/cheese/Каммамбер-s.jpg",
+        "iconMinusStatus": "notActive"
     },
     {
         "availability": 0,
@@ -172,13 +183,18 @@ const goods = [
         "description": "Авторський сир за принципом каммамбера з білою скоринкою.",
         "price100": 40,
         "price300": 120,
-        "totalPriceSelectedItem": 150,
-        "product-weight": 300,
+        "totalPriceSelectedItem": 120,
+        "productWeight": 300,
         "minProductWeight": 300,
         "amount": 1,
         "image": "./images/all_img/cheese/Люторс.jpg",
-        "preImg": "./images/all_img/cheese/Люторс-s.jpg"
+        "preImg": "./images/all_img/cheese/Люторс-s.jpg",
+        "iconMinusStatus": "iconActive"
     },
+    {
+        "totalAmount": 120,
+        "totalWeight": 300
+    }
 ];
 
 export default goods;

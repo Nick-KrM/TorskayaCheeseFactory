@@ -17,6 +17,7 @@ function handleBtnClick(e) {
     updateData();
 
     const target = e.target;
+    let btnText = target.textContent;
 
     // ловлю клик по кнопке "купить"
     if (target.nodeName !== "BUTTON") {
@@ -44,6 +45,9 @@ function handleBtnClick(e) {
 
     counterItemsCart();
     cartVisibility();
+
+    btnText = "done";
+    console.log(btnText);
 };
 
 // ф-я поиска id при клике по кнопке "купить"

@@ -35,23 +35,6 @@
     </header>
     <main>
       <section class="cart__section">
-        <!-- <template id="menu-template">
-          <li class="cardBx" id="{{id}}">
-            <div class="card">
-              <div class="imgBx">
-                <img src="{{image}}" alt="{{name}}" class="card__image" />
-              </div>
-              <div class="content productsCard__content">
-                <h3 class="card__title">{{name}}</h3>
-                <p>
-                  {{titleDescription}}<br /><br />Ціна -
-                  <span>{{price100}}грн/100г</span>
-                </p>
-                <button class="card__btn">Оформити</button>
-              </div>
-            </div>
-          </li>
-        </template> -->
         <div class="container cart__container">
           <h3 class="cart__title">Ваші товари:</h3>
 
@@ -59,26 +42,40 @@
             <template id="cart-template">
               <li class="cart__product" id="{{id}}">
                 <div class="product-thumb">
-                  <img class="prodPrevImg" src="{{preImg}}" alt="картинка {{name}}" />
+                  <img class="prodPrevImg" src="{{preImg}}" alt="картинка {{name}}" height="70px" width="70px" />
                 </div>
                 <div class="product-title">
                   <a style="color: inherit" target="_blank" href="#">{{name}}</a>
-                  <p class="product__title--text">Обрана вага: <span class="product__title--weigth">{{product-weight}}</span>г</p>
+                  <p class="product__title--text">
+                    Обрана вага: <span class="product__title--weigth" data-weight-text="{{name}}">{{productWeight}}</span>г
+                  </p>
                 </div>
 
                 <div class="product-plusminus">
                   <svg class="icon icon-plus">
-                    <use data-btn-assignment="add" xlink:href="./images/Logo&Favicons/sprite-cart.svg#icon-plus"></use>
+                    <use
+                      data-btn-assignment="add"
+                      data-btn-item-name="{{name}}"
+                      xlink:href="./images/Logo&Favicons/sprite-cart.svg#icon-plus"
+                    ></use>
                   </svg>
                   <span class="product-quantity">100г</span>
-                  <svg class="icon icon-minus">
-                    <use data-btn-assignment="reduce" xlink:href="./images/Logo&Favicons/sprite-cart.svg#icon-minus"></use>
+                  <svg class="icon icon-minus {{iconMinusStatus}}">
+                    <use
+                      data-btn-assignment="reduce"
+                      data-btn-item-name="{{name}}"
+                      xlink:href="./images/Logo&Favicons/sprite-cart.svg#icon-minus"
+                    ></use>
                   </svg>
                 </div>
                 <div class="product-amount"><span class="prodCost">{{totalPriceSelectedItem}}</span>грн.</div>
                 <div class="product-del">
                   <svg class="icon icon-close">
-                    <use data-btn-assignment="delete" xlink:href="./images/Logo&Favicons/sprite-cart.svg#icon-close"></use>
+                    <use
+                      data-btn-assignment="delete"
+                      data-btn-item-name="{{name}}"
+                      xlink:href="./images/Logo&Favicons/sprite-cart.svg#icon-close"
+                    ></use>
                   </svg>
                 </div>
               </li>

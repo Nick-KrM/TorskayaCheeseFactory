@@ -1,39 +1,113 @@
 import documentRefs from './refs.js';
 import { getProdById, updateData, saveData, clearData, cartVisibility, counterItemsCart } from './cartIcon.js';
 const prodListCart = documentRefs.prodListCart;
-// console.log(prodListCart);
+let totalAmountOfItemsBx = document.querySelector('.prodTotalCost');
+let totalAmountOfAllGoods = 0;
 
-let selectedProdCart;
-selectedProdCart = updateData();
+// Обновляю массив объектов из локального хранилища
+let selectedProdCart = updateData();
+
+// ф-я получает массив всех значений объектов по ключу
+const getAllPropValues = function (arr, prop) {
+    const arrProp = [];
+
+    for (let item of selectedProdCart) {
+        if (item[prop] !== undefined) {
+            arrProp.push(item[prop]);
+        }
+    } return arrProp;
+};
+
+let objTotalAmountOfItems = getAllPropValues(selectedProdCart, 'totalPriceSelectedItem');
+
+
+for (const number of objTotalAmountOfItems) {
+    totalAmountOfAllGoods += number;
+}
+// console.log(totalAmountOfAllGoods);
+totalAmountOfItemsBx.textContent = totalAmountOfAllGoods;
+
+console.log(totalAmountOfItemsBx.textContent);
 
 const cartItems = document.querySelector('#cart-template').innerHTML.trim();
-
 const cartTemplate = Handlebars.compile(cartItems);
-
-const cartMarkup = selectedProdCart.map(item => cartTemplate(item)).join('');
-
-const cartItemsContainer = documentRefs.prodListCart;
+let cartMarkup = selectedProdCart.map(item => cartTemplate(item)).join('');
 
 function weigthChangeBtn(e) {
     e.preventDefault();
-    updateData();
 
-    const target = e.target.dataset.btnAssignment;
+    const targetBtnAssignment = e.target.dataset.btnAssignment; // Определение кнопки по атрибуту назначения кнопки
+    const targetId = e.target.dataset.btnItemName; // Определение кнопки по атрибуту имени кнопки
+    let selectedItemObj = getObjByName(selectedProdCart, targetId); // кликнутый объект со всеми данными
+    let iconMinusStatus = e.target.parentNode.parentNode.children[2]; // кликнутый объект с кнопкой "минус" для изменения стилей
 
-    if (target === undefined) {
+    if (targetBtnAssignment === undefined) {
         return
     };
 
-    if (target === 'add') {
-        console.log(`Добавляем вес кнопкой: ${target}`);
+    // Переменные веса и цены изменяемого объекта
+    let selectedItemWeight = e.target.parentNode.parentNode.parentNode.children[1].children[1].children[0];
+    let selectedItemPrice = e.target.parentNode.parentNode.parentNode.children[3].children[0];
+
+    // Приведение к числу значений веса и цены
+    let counterPriceValue = Number(selectedItemPrice.textContent);
+    let counterWeightValue = Number(selectedItemWeight.textContent);
+
+    if (targetBtnAssignment === 'add') {
+        counterPriceValue += selectedItemObj.price100;
+        counterWeightValue += 100;
+
+        // Цена выбраного товара
+        selectedItemPrice.textContent = counterPriceValue;
+        selectedItemObj.totalPriceSelectedItem = counterPriceValue;
+
+        // Вес выбраного товара
+        selectedItemWeight.textContent = counterWeightValue;
+        selectedItemObj.productWeight = counterWeightValue;
+
+        selectedItemObj.iconMinusStatus = 'active';
+        iconMinusStatus.classList.remove('notActive');
+
+        setTotalAmount();
+        saveData();
     };
 
-    if (target === 'reduce') {
-        console.log(`Уменьшаем вес кнопкой: ${target}`);
+    if (targetBtnAssignment === 'reduce') {
+
+        if (Number(selectedItemWeight.textContent) > 400) {
+            counterPriceValue -= selectedItemObj.price100;
+            counterWeightValue -= 100;
+
+            // Изменяю цену текстКонтента и в объекте
+            selectedItemPrice.textContent = counterPriceValue;
+            selectedItemObj.totalPriceSelectedItem = counterPriceValue;
+            // Изменяю вес текстКонтента и в объекте
+            selectedItemWeight.textContent = counterWeightValue;
+            selectedItemObj.productWeight = counterWeightValue;
+
+            setTotalAmount();
+            saveData();
+        } else {
+            // Присваиваю значение минимального заказа и цены
+
+            selectedItemPrice.textContent = selectedItemObj.price300;
+            selectedItemObj.totalPriceSelectedItem = selectedItemObj.price300;
+
+            selectedItemWeight.textContent = selectedItemObj.minProductWeight;
+            selectedItemObj.productWeight = selectedItemObj.minProductWeight;
+
+            selectedItemObj.iconMinusStatus = 'notActive';
+            iconMinusStatus.classList.add('notActive');
+            saveData();
+        }
     };
 
-    if (target === 'delete') {
-        console.log(`Удаляем товар из спискаы: ${target}`);
+    if (targetBtnAssignment === 'delete') {
+
+        saveData();
+
+        console.log(targetId);
+        console.log(`Удаляем товар из спискаы: ${targetBtnAssignment}`);
     };
 };
 
@@ -42,4 +116,23 @@ if (prodListCart !== null) {
     prodListCart.addEventListener('click', weigthChangeBtn);
 };
 
-cartItemsContainer.insertAdjacentHTML('beforeend', cartMarkup);
+prodListCart.innerHTML = cartMarkup;
+// prodListCart.insertAdjacentHTML('beforeend', cartMarkup);
+
+
+// поиск объекта в массиве по имени
+const getObjByName = (arr, name) => {
+    return arr.find(x => x.name === name);
+};
+
+// ф-я получая массив всех сумм товара, суммирует данные массива и присваетвает полученное значение к textContent
+function setTotalAmount() {
+    objTotalAmountOfItems = getAllPropValues(selectedProdCart, 'totalPriceSelectedItem');
+    totalAmountOfAllGoods = 0;
+
+    for (const number of objTotalAmountOfItems) {
+        totalAmountOfAllGoods += number;
+    };
+
+    totalAmountOfItemsBx.textContent = totalAmountOfAllGoods;
+};

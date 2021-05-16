@@ -347,7 +347,7 @@ img {
   display: inline-block;
   color: #fff;
   margin-top: 12px;
-  padding: 10px 30px;
+  padding: 10px 20px;
   border-radius: 20px;
   font-size: 18px;
   text-transform: uppercase;
@@ -620,6 +620,7 @@ a:hover .fa-telegram {
   top: 100px;
   right: 5%;
   z-index: 9999;
+  opacity: 1;
 }
 
 .carticon__wrapper {
@@ -777,6 +778,15 @@ a:hover .fa-telegram {
   transform: scale(0.85);
 }
 
+.notActive {
+  transform: scale(0.7);
+  opacity: 0.5;
+}
+
+.notActive:hover {
+  transform: scale(0.7);
+}
+
 .icon-close:hover,
 .icon-minus:hover,
 .icon-plus:hover {
@@ -814,4 +824,5 @@ a:hover .fa-telegram {
 /* Для сокрытия элементов */
 .hidden {
   z-index: -9999;
+  opacity: 0;
 }
