@@ -23,15 +23,15 @@ let objTotalAmountOfItems = getAllPropValues(selectedProdCart, 'totalPriceSelect
 
 for (const number of objTotalAmountOfItems) {
     totalAmountOfAllGoods += number;
-}
-// console.log(totalAmountOfAllGoods);
+};
 totalAmountOfItemsBx.textContent = totalAmountOfAllGoods;
 
-console.log(totalAmountOfItemsBx.textContent);
 
+// Рендеринг страницы
 const cartItems = document.querySelector('#cart-template').innerHTML.trim();
 const cartTemplate = Handlebars.compile(cartItems);
 let cartMarkup = selectedProdCart.map(item => cartTemplate(item)).join('');
+
 
 function weigthChangeBtn(e) {
     e.preventDefault();
@@ -48,6 +48,7 @@ function weigthChangeBtn(e) {
     // Переменные веса и цены изменяемого объекта
     let selectedItemWeight = e.target.parentNode.parentNode.parentNode.children[1].children[1].children[0];
     let selectedItemPrice = e.target.parentNode.parentNode.parentNode.children[3].children[0];
+    let selectedHTMLItem = e.target.parentNode.parentNode.parentNode;
 
     // Приведение к числу значений веса и цены
     let counterPriceValue = Number(selectedItemPrice.textContent);
@@ -98,20 +99,39 @@ function weigthChangeBtn(e) {
 
             selectedItemObj.iconMinusStatus = 'notActive';
             iconMinusStatus.classList.add('notActive');
+
+            setTotalAmount();
             saveData();
         }
     };
 
+    console.log(selectedProdCart.length);
+
     if (targetBtnAssignment === 'delete') {
 
-        saveData();
+        console.log(selectedHTMLItem);
+        let objPosition = selectedProdCart.indexOf(selectedItemObj);
+        const deletedGoods = selectedProdCart.splice(objPosition, 1);
 
-        console.log(targetId);
-        console.log(`Удаляем товар из спискаы: ${targetBtnAssignment}`);
+        // console.log(deletedGoods);
+        // console.log(`Удаляем товар  ${selectedItemObj} из массива: ${selectedProdCart}`);
+        // console.log(selectedProdCart[objPosition]);
+        // console.log(objPosition);
+
+        // Переадресовую на страницу с товарами, если товаров в массиве не осталось, если же товары есть, то обновляю стр.
+        if (selectedProdCart.length < 1) {
+            location = location.href = "index.html#products";
+        } else {
+            // location = location;
+            selectedHTMLItem.remove();
+        }
+        console.log(selectedProdCart);
+        setTotalAmount();
+        saveData();
     };
 };
 
-// Вешаю слушателя на списко товаров, если он не пустой.
+// Вешаю слушателя на список товаров, если он не пустой.
 if (prodListCart !== null) {
     prodListCart.addEventListener('click', weigthChangeBtn);
 };
