@@ -102,7 +102,7 @@ function weigthChangeBtn(e) {
 
             setTotalAmount();
             saveData();
-        }
+        };
     };
 
     console.log(selectedProdCart.length);
@@ -113,19 +113,13 @@ function weigthChangeBtn(e) {
         let objPosition = selectedProdCart.indexOf(selectedItemObj);
         const deletedGoods = selectedProdCart.splice(objPosition, 1);
 
-        // console.log(deletedGoods);
-        // console.log(`Удаляем товар  ${selectedItemObj} из массива: ${selectedProdCart}`);
-        // console.log(selectedProdCart[objPosition]);
-        // console.log(objPosition);
-
         // Переадресовую на страницу с товарами, если товаров в массиве не осталось, если же товары есть, то обновляю стр.
         if (selectedProdCart.length < 1) {
             location = location.href = "index.html#products";
         } else {
-            // location = location;
             selectedHTMLItem.remove();
-        }
-        console.log(selectedProdCart);
+        };
+
         setTotalAmount();
         saveData();
     };
