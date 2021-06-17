@@ -27,11 +27,11 @@ $body = '<h1>Вот еще заказик подъехал!</h1>';
 if (trim(!empty($_POST['name']))) {
     $body .= '<p><strong>Имя:</strong> ' . $_POST['name'] . '</p>';
 }
-if (trim(!empty($_POST['email']))) {
-    $body .= '<p><strong>E-mail:</strong> ' . $_POST['email'] . '</p>';
-}
+// if (trim(!empty($_POST['email']))) {
+//     $body .= '<p><strong>E-mail:</strong> ' . $_POST['email'] . '</p>';
+// }
 if (trim(!empty($_POST['message']))) {
-    $body .= '<p><strong>Повiдомлення:</strong> ' . $_POST['messageы'] . '</p>';
+    $body .= '<p><strong>Повiдомлення:</strong> ' . $_POST['message'] . '</p>';
 }
 
 
@@ -47,6 +47,5 @@ if (!$mail->send()) {
 
 $response = ['message' => $message];
 
-header('Country-type: application/json');
+header('Content-type: application/json');
 echo json_encode($response);
-?>
