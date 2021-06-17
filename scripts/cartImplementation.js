@@ -1,5 +1,7 @@
 import documentRefs from './refs.js';
-import { getProdById, updateData, saveData, clearData, cartVisibility, counterItemsCart } from './cartIcon.js';
+import goodsArray from './products.js';
+import { getProdById, updateData, saveData, clearData, cartVisibility, counterItemsCart, getAllPropValues } from './cartIcon.js';
+
 const prodListCart = documentRefs.prodListCart;
 let totalAmountOfItemsBx = document.querySelector('.prodTotalCost');
 let totalAmountOfAllGoods = 0;
@@ -7,25 +9,17 @@ let totalAmountOfAllGoods = 0;
 // Обновляю массив объектов из локального хранилища
 let selectedProdCart = updateData();
 
-// ф-я получает массив всех значений объектов по ключу
-const getAllPropValues = function (arr, prop) {
-    const arrProp = [];
-
-    for (let item of selectedProdCart) {
-        if (item[prop] !== undefined) {
-            arrProp.push(item[prop]);
-        }
-    } return arrProp;
-};
-
 let objTotalAmountOfItems = getAllPropValues(selectedProdCart, 'totalPriceSelectedItem');
 
 
 for (const number of objTotalAmountOfItems) {
     totalAmountOfAllGoods += number;
 };
-totalAmountOfItemsBx.textContent = totalAmountOfAllGoods;
 
+// console.log(totalAmountOfItemsBx);
+if (totalAmountOfItemsBx !== null) {
+    totalAmountOfItemsBx.textContent = totalAmountOfAllGoods;
+};
 
 // Рендеринг страницы
 const cartItems = document.querySelector('#cart-template').innerHTML.trim();
@@ -105,7 +99,7 @@ function weigthChangeBtn(e) {
         };
     };
 
-    console.log(selectedProdCart.length);
+    // console.log(selectedProdCart);
 
     if (targetBtnAssignment === 'delete') {
 
@@ -149,4 +143,6 @@ function setTotalAmount() {
     };
 
     totalAmountOfItemsBx.textContent = totalAmountOfAllGoods;
+    // const message = `Сумма всех товаров: ${totalAmountOfAllGoods}грн`;
+    // console.log(message);
 };

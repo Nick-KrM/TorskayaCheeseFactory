@@ -13,7 +13,9 @@ const goods = [
         "amount": 1,
         "image": "./images/all_img/cheese/Качотта.jpg",
         "preImg": "./images/all_img/cheese/Качотта-s.jpg",
-        "iconMinusStatus": "notActive"
+        "iconMinusStatus": "notActive",
+        "totalAmountOfAllGoods": 120,
+        "totalWeightOfAllGoods": 300
     },
     {
         "availability": 1,
@@ -29,7 +31,9 @@ const goods = [
         "amount": 1,
         "image": "./images/all_img/cheese/Карачун.jpg",
         "preImg": "./images/all_img/cheese/Карачун-s.jpg",
-        "iconMinusStatus": "notActive"
+        "iconMinusStatus": "notActive",
+        "totalAmountOfAllGoods": 120,
+        "totalWeightOfAllGoods": 300
     },
     {
         "availability": 1,
@@ -45,7 +49,9 @@ const goods = [
         "amount": 1,
         "image": "./images/all_img/cheese/Скіф.jpg",
         "preImg": "./images/all_img/cheese/Скіф-s.jpg",
-        "iconMinusStatus": "notActive"
+        "iconMinusStatus": "notActive",
+        "totalAmountOfAllGoods": 120,
+        "totalWeightOfAllGoods": 300
     },
     {
         "availability": 1,
@@ -61,7 +67,9 @@ const goods = [
         "amount": 1,
         "image": "./images/all_img/cheese/Реблошон.jpg",
         "preImg": "./images/all_img/cheese/Реблошон-s.jpg",
-        "iconMinusStatus": "notActive"
+        "iconMinusStatus": "notActive",
+        "totalAmountOfAllGoods": 120,
+        "totalWeightOfAllGoods": 300
     },
     {
         "availability": 1,
@@ -77,7 +85,9 @@ const goods = [
         "amount": 1,
         "image": "./images/all_img/cheese/Гауда.jpg",
         "preImg": "./images/all_img/cheese/Гауда-s.jpg",
-        "iconMinusStatus": "notActive"
+        "iconMinusStatus": "notActive",
+        "totalAmountOfAllGoods": 120,
+        "totalWeightOfAllGoods": 300
     },
     {
         "availability": 1,
@@ -93,7 +103,9 @@ const goods = [
         "amount": 1,
         "image": "./images/all_img/cheese/Кайрфіллі.jpg",
         "preImg": "./images/all_img/cheese/Кайрфіллі-s.jpg",
-        "iconMinusStatus": "notActive"
+        "iconMinusStatus": "notActive",
+        "totalAmountOfAllGoods": 120,
+        "totalWeightOfAllGoods": 300
     },
     {
         "availability": 1,
@@ -109,7 +121,9 @@ const goods = [
         "amount": 1,
         "image": "./images/all_img/cheese/Чеддер.jpg",
         "preImg": "./images/all_img/cheese/Чеддер-s.jpg",
-        "iconMinusStatus": "notActive"
+        "iconMinusStatus": "notActive",
+        "totalAmountOfAllGoods": 120,
+        "totalWeightOfAllGoods": 300
     },
     {
         "availability": 1,
@@ -125,7 +139,9 @@ const goods = [
         "amount": 1,
         "image": "./images/all_img/cheese/Монтеррей Джек.jpg",
         "preImg": "./images/all_img/cheese/Монтеррей Джек-s.jpg",
-        "iconMinusStatus": "notActive"
+        "iconMinusStatus": "notActive",
+        "totalAmountOfAllGoods": 120,
+        "totalWeightOfAllGoods": 300
     },
     {
         "availability": 0,
@@ -141,7 +157,9 @@ const goods = [
         "amount": 1,
         "image": "./images/all_img/cheese/Торський сир.jpg",
         "preImg": "./images/all_img/cheese/Торський сир-s.jpg",
-        "iconMinusStatus": "notActive"
+        "iconMinusStatus": "notActive",
+        "totalAmountOfAllGoods": 120,
+        "totalWeightOfAllGoods": 300
     },
     {
         "availability": 0,
@@ -157,7 +175,9 @@ const goods = [
         "amount": 1,
         "image": "./images/all_img/cheese/Маасдам.jpg",
         "preImg": "./images/all_img/cheese/Маасдам-s.jpg",
-        "iconMinusStatus": "notActive"
+        "iconMinusStatus": "notActive",
+        "totalAmountOfAllGoods": 120,
+        "totalWeightOfAllGoods": 300
     },
     {
         "availability": 0,
@@ -173,7 +193,9 @@ const goods = [
         "amount": 1,
         "image": "./images/all_img/cheese/Каммамбер.jpg",
         "preImg": "./images/all_img/cheese/Каммамбер-s.jpg",
-        "iconMinusStatus": "notActive"
+        "iconMinusStatus": "notActive",
+        "totalAmountOfAllGoods": 120,
+        "totalWeightOfAllGoods": 300
     },
     {
         "availability": 0,
@@ -189,11 +211,9 @@ const goods = [
         "amount": 1,
         "image": "./images/all_img/cheese/Люторс.jpg",
         "preImg": "./images/all_img/cheese/Люторс-s.jpg",
-        "iconMinusStatus": "iconActive"
-    },
-    {
-        "totalAmount": 120,
-        "totalWeight": 300
+        "iconMinusStatus": "iconActive",
+        "totalAmountOfAllGoods": 120,
+        "totalWeightOfAllGoods": 300
     }
 ];
 

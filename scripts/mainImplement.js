@@ -1,4 +1,4 @@
-import getGoodsInStock from './AvailabilityСheck.js';
+import getGoodsInStock from './availability.js';
 
 const itemsArray = getGoodsInStock;
 // console.log(itemsArray);

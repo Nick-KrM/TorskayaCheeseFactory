@@ -80,8 +80,10 @@ function cartVisibility() {
 
         if (cartData.length === 0) {
             console.log(`Нет товаров в корзине, прячем корзину`);
-            cartIconBlock.classList.add('hidden');
+            // cartIconBlock.classList.add('hidden');
+            // cartIconBlock.classList.remove('cartAnim');
         } else {
+            cartIconBlock.classList.add('cartAnim');
             cartIconBlock.classList.remove('hidden');
         };
     }
@@ -98,4 +100,15 @@ if (allGoods !== null) {
     allGoods.addEventListener('click', handleBtnClick);
 };
 
-export { getProdById, updateData, saveData, clearData, cartVisibility, counterItemsCart };
+// ф-я получает массив всех значений объектов по ключу
+function getAllPropValues(arr, prop) {
+    const arrProp = [];
+
+    for (let item of arr) {
+        if (item[prop] !== undefined) {
+            arrProp.push(item[prop]);
+        }
+    } return arrProp;
+};
+
+export { getProdById, updateData, saveData, clearData, cartVisibility, counterItemsCart, getAllPropValues };
