@@ -32,10 +32,10 @@
           <!-- <h1>Ваше замовлення:</h1> -->
           <!-- <div id="order-message" class="alert alert-info"></div> -->
           <div class="formBx">
-            <form action="#" class="orderForm">
+            <form action="sendmail.php" method="POST" class="orderForm">
               <h3>Ваше замовлення</h3>
-              <input type="text" name="" placeholder="Прізвище ім'я по батькові *" class="form__input _req" />
-              <input type="email" name="" placeholder="Email:" id="" class="form__input" />
+              <input type="text" name="name" placeholder="Прізвище ім'я по батькові *" class="form__input _req" />
+              <input type="email" name="email" placeholder="Email:" id="" class="form__input" />
               <!-- <label for="online_phone" style="color: white">Телефон:</label> -->
               <input
                 id="online_phone"
@@ -49,9 +49,15 @@
                 placeholder="+38(___)___-__-__"
                 class="form__input _req"
               />
-              <input type="text" name="" placeholder="Мiсто: *" id="" class="form__input _req" />
-              <input type="text" name="" placeholder="Номер відділення Нової Пошти" id="" class="form__input _req" />
-              <textarea placeholder="Коментар" name="" id="" cols="4" rows="4" class="form__input"></textarea>
+              <input type="text" name="city" placeholder="Мiсто: *" id="" class="form__input _req" />
+              <input
+                type="text"
+                name="numberOfNewMail"
+                placeholder="Номер відділення Нової Пошти"
+                id=""
+                class="form__input _req"
+              />
+              <textarea placeholder="Коментар" name="message" id="" cols="4" rows="4" class="form__input"></textarea>
 
               <button type="submit" class="form__button">Замовити</button>
             </form>

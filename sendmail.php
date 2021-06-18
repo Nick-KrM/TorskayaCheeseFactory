@@ -2,17 +2,29 @@
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
 
 require 'phpmailer/src/Exception.php';
 require 'phpmailer/src/PHPMailer.php';
+require 'phpmailer/src/SMTP.php';
 
+
+//Server settings
 $mail = new PHPMailer(true);
 $mail->CharSet = 'UTF-8';
 $mail->setLanguage('ru', 'phpmailer/language/');
 $mail->IsHTML(true);
+// $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+$mail->isSMTP();                                            //Send using SMTP
+$mail->Host = 'smtp.gmail.com';                     //Set the SMTP server to send through
+$mail->SMTPSecure = 'tls';         //Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+$mail->SMTPAuth = true;                                   //Enable SMTP authentication
+$mail->Username = 'webdevafter30@gmail.com';                     //SMTP username
+$mail->Password = '16nick04';                               //SMTP password
+$mail->Port = 587;                                    //TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 
 //От кого письмо
-$mail->setFrom('style.jimbo@gmail.com', 'Заказчик');
+$mail->setFrom('webdevafter30@gmail.com', 'Заказчик');
 //Кому отправка
 $mail->addAddress('webdevafter30@gmail.com');
 //Тема отправляемого сообщения
@@ -40,12 +52,14 @@ $mail->Body = $body;
 
 //Отправляем
 if (!$mail->send()) {
-    $message = 'Ошибка';
+    $message = 'Якась помилка, спробуйте ще раз (О_о)';
 } else {
-    $message = 'Данные отправленны!';
+    $message = 'Ваше замовлення прийняте, чекайте дзвінка!';
 }
 
 $response = ['message' => $message];
 
 header('Content-type: application/json');
 echo json_encode($response);
+
+// $mail->smtpClose();
