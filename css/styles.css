@@ -895,5 +895,7 @@ a:hover .fa-telegram {
 
 /* Для сокрытия элементов */
 .hidden {
+  display: none;
+  visibility: hidden;
   transform: scale(0);
 }

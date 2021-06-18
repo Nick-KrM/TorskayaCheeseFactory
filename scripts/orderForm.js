@@ -18,10 +18,13 @@ for (const number of objTotalAmountOfItems) {
 };
 
 for (const item of cartData) {
-    let message = `${item.name} ${item.productWeight}г - ${item.totalPriceSelectedItem}грн;`;
+    let message = `<p><strong>${item.name}</strong> ${item.productWeight}г - ${item.totalPriceSelectedItem}грн;`;
     orderList.push(message);
 };
 
-const orderMessage = `Замовлення:\n\n\n${orderList.join('\n\n')}\n\n\nРазом: ${totalAmountOfAllGoods}грн\nЗагальна вага замовлення: ${totalWeightOfAllGoods}г`;
+const orderMessage = `<h3>Замовлення:</h3>${orderList.join('<br>')}<br><br><p>Разом: <strong>${totalAmountOfAllGoods}</strong>грн<br><p>Загальна вага замовлення: <strong>${totalWeightOfAllGoods}</strong>г<br><br>`;
 
-console.log(orderMessage);
+documentRefs.orderFormInput.textContent = orderMessage;
+console.log(documentRefs.orderFormInput.textContent);
+
+export default orderMessage;

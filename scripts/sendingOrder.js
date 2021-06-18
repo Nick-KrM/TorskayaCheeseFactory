@@ -1,4 +1,8 @@
 'use strict'
+import orderMessage from './orderForm.js';
+import { updateData, saveData, clearData } from './cartIcon.js';
+
+
 
 function sendingOrder() {
     const form = document.querySelector('.orderForm');
@@ -11,6 +15,7 @@ function sendingOrder() {
 
         let error = formValidate(form);
         let formData = new FormData(form);
+
 
         if (error === 0) {
             // Отправка 
@@ -29,6 +34,12 @@ function sendingOrder() {
                 alert(result.message);
                 form.reset();
                 orderSection.classList.remove('_sending');
+
+                //ф-я очистки корзины с изменением локального хранилища
+                let cartData;
+                clearData();
+                // Возвращаем пользователя на главную страницу
+                location = location.href = "index.html#home";
             } else {
                 alert('Ошибка');
                 orderSection.classList.remove('_sending');
@@ -56,6 +67,8 @@ function sendingOrder() {
                     error++;
                 };
             };
+
+            // С проверкой заполненного поля почты
 
             // if (input.classList.contains('_email')) {
             //     if (emailTest(input)) {
@@ -88,8 +101,13 @@ function sendingOrder() {
     // Функция проверки правильности вводимого email
     function emailTest(input) {
         return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
-    }
+    };
 
 };
+
+//ф-я очистки корзины с изменением локального хранилища
+
+
+// console.log('Проверка импорта ниже ↓\n\n\n', orderMessage);
 
 document.addEventListener('DOMContentLoaded', sendingOrder);
