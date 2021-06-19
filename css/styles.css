@@ -3,15 +3,22 @@
 
 :root {
   --main-bg-col-ligth: #e3edf7;
-  --main-bg-col-dark: #111;
+  --main-bg-col-dark: rgb(22, 22, 22);
 
   --main-txt-col-light: #fff;
   --main-txt-col-dark: #555;
+  --second-txt-col: #66301c;
+  --nav-txt-hover-col: rgb(247, 228, 123);
 
-  --main-btn-bg-col: linear-gradient(to bottom left, #008000 0%, #adff2f 100%);
-  --prod-btn-bg-col: linear-gradient(to bottom left, #00913f 0%, #16ff7b 100%);
+  /* --main-btn-bg-col: linear-gradient(to bottom left, #008000 0%, #adff2f 100%);
+  --prod-btn-bg-col: linear-gradient(to bottom left, #00913f 0%, #16ff7b 100%); */
+  --main-btn-bg-col: #00aa22;
+  --hover-btn-bg-col: #18ce00;
+  /* --hover-btn-bg-col: #ce8d00; */
 
   --prod-bg-col: linear-gradient(to bottom left, rgb(211, 132, 41) 0%, #fff 40%);
+
+  --testimonial-bx-col: linear-gradient(to bottom left, rgb(218, 204, 126) 0%, #fff 50%);
 }
 
 * {
@@ -106,6 +113,8 @@ section {
 .btn {
   position: relative;
   background: var(--main-btn-bg-col);
+  border: 1px solid rgb(0, 150, 0);
+  box-shadow: 4px 4px 3px -1px rgba(0, 190, 0, 50%);
   display: inline-block;
   color: #fff;
   margin-top: 20px;
@@ -118,9 +127,9 @@ section {
   border-radius: 8px;
 }
 
-.btn:hover {
-  background: linear-gradient(to bottom left, #adff2f 0%, #008000 100%);
-}
+/* .btn:hover {
+  background: var(--hover-btn-bg-col);
+} */
 
 /* HEADER */
 
@@ -138,7 +147,7 @@ header {
 }
 
 header.sticky {
-  background: var(--main-bg-col-ligth);
+  background: var(--main-bg-col-dark);
   padding: 20px 100px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
@@ -152,9 +161,9 @@ header .logo {
   letter-spacing: 2px;
 }
 
-header.sticky .logo {
+/* header.sticky .logo {
   color: #111;
-}
+} */
 
 header ul {
   position: relative;
@@ -172,11 +181,17 @@ header ul li a {
   margin: 0 15px;
   color: #fff;
   text-decoration: none;
+  transition: transform 0.5s ease 0s;
 }
 
-header.sticky ul li a {
-  color: #111;
+header ul li a:hover {
+  color: var(--nav-txt-hover-col);
+  transform: scale(1.1);
 }
+
+/* header.sticky ul li a {
+  color: #111;
+} */
 
 /* MAIN */
 /* heading  */
@@ -185,7 +200,7 @@ header.sticky ul li a {
   width: 100%;
   text-align: center;
   margin-bottom: 30px;
-  color: #111;
+  /* color: #111; */
 }
 
 .heading h2 {
@@ -199,7 +214,8 @@ header.sticky ul li a {
 }
 
 .contentBx {
-  padding-right: 30px;
+  padding-right: 5px;
+  padding-left: 5px;
 }
 
 .contentBx h3 {
@@ -207,7 +223,7 @@ header.sticky ul li a {
   margin-bottom: 10px;
 }
 
-.w50 {
+.videoBx {
   min-width: 50%;
 }
 
@@ -226,10 +242,17 @@ img {
   padding-bottom: 10px;
 }
 
-.products .heading.white {
+.heading .testimonials__title,
+.heading.social__title,
+.products .heading.prod__title {
+  color: var(--second-txt-col);
+}
+
+.socialMediaIcons h2,
+.testimonials__title,
+.products .heading.prod__title {
   font-size: 1.8em;
   line-height: 1.5em;
-  color: #66301c;
 }
 
 .products .content {
@@ -261,7 +284,7 @@ img {
   display: flex;
   flex-direction: column;
   border: 1px solid rgba(0, 0, 0, 0.3);
-  box-shadow: 0 5px 20px rgba (0, 0, 0, 0.5);
+  /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); */
   box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.3);
   transition: 0.3s ease-in-out;
 }
@@ -344,7 +367,7 @@ img {
 .card__btn {
   position: relative;
   width: 140px;
-  background: var(--prod-btn-bg-col);
+  background-color: var(--main-btn-bg-col);
   display: inline-block;
   color: #fff;
   margin-top: 12px;
@@ -356,26 +379,76 @@ img {
   letter-spacing: 2px;
   font-weight: 500;
   border: 1px solid rgb(0, 170, 0);
+  box-shadow: 6px 6px 5px -1px rgba(0, 170, 0, 50%);
   opacity: 0;
-}
-
-.card__btn:hover {
-  background: linear-gradient(to top right, #00913f 0%, #00e262 100%);
-  /* background: #00bc52; */
+  transition: opacity 0.7s ease 0s;
+  transition-delay: 0.3s;
 }
 
 .container .card:hover .card__btn {
   opacity: 1;
-  transition: 1s ease-in-out;
-  transition-delay: 0.3s;
 }
 
-/* News */
+.btn:hover,
+.card__btn:hover {
+  transition: background-color 0.3s ease 0s;
+  background-color: var(--hover-btn-bg-col);
+  box-shadow: 3px 3px 2px -1px rgb(0, 190, 0);
+  border: 1px solid rgb(0, 190, 0);
+  cursor: pointer;
+}
 
-.news {
+/* about */
+
+.about {
   background-color: var(--main-bg-col-dark);
   min-height: 100vh;
   color: var(--main-txt-col-light);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.aboutBx {
+  margin-right: 25px;
+  background: linear-gradient(to top right, #242424 0%, #050505 100%);
+  box-shadow: 0 5px 15px rgba(51, 51, 51, 0.5);
+}
+
+.about__video {
+  width: 100%;
+  height: 100%;
+}
+
+.aboutLink__bx {
+  margin-top: 50px;
+}
+
+.aboutLink__bx::after {
+  display: block;
+  background-color: #fff;
+  content: "";
+  margin-top: 15px;
+  height: 2px;
+  width: 6%;
+  left: 50%;
+  position: absolute;
+  transition: width 0.3s linear;
+  transform: translateX(-50%);
+}
+
+.aboutLink__bx:hover::after {
+  width: 15%;
+}
+
+.about .aboutLink {
+  font-size: 24px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
 }
 
 /* work */
@@ -412,7 +485,8 @@ img {
   max-width: calc(50% - 40px);
   padding: 60px 40px;
   margin: 20px;
-  background: #5fb3f793;
+  background: var(--testimonial-bx-col);
+  box-shadow: 6px 6px 10px -1px rgb(0 0 0 / 30%);
 }
 
 .testimonials .content .testimonialBx p {
@@ -425,7 +499,7 @@ img {
 .testimonials .content .testimonialBx h3 {
   margin-top: 40px;
   text-align: end;
-  color: #fff;
+  /* color: #fff; */
   font-weight: 600;
   font-size: 20px;
   line-height: 1em;
@@ -440,10 +514,10 @@ img {
 
 .socialMediaIcons {
   background: var(--main-bg-col-ligth);
-  min-height: 50vh;
+  min-height: 45vh;
 }
 
-.socialMediaIcons h2,
+/* .socialMediaIcons h2,
 .testimonials__title {
   font-family: sans-serif;
   font-weight: normal;
@@ -453,7 +527,7 @@ img {
   color: var(--main-txt-col-dark);
   text-align: center;
   text-transform: uppercase;
-}
+} */
 
 .social-media {
   display: flex;
@@ -464,8 +538,8 @@ img {
 .social-media a {
   display: flex;
   background: #ddd;
-  height: 75px;
-  width: 75px;
+  height: 140px;
+  width: 140px;
   margin: 6px 6px;
   border-radius: 8px;
   align-items: center;
@@ -477,7 +551,7 @@ img {
 }
 
 .social-media a i {
-  font-size: 35px;
+  font-size: 75px;
   color: #777;
   transition: transform 0.5s;
 }
@@ -490,7 +564,7 @@ img {
 }
 
 .social-media a:hover i {
-  transform: scale(0.9);
+  transform: scale(0.92);
 }
 
 a:hover .fa-facebook {

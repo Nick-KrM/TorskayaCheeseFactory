@@ -28,11 +28,15 @@ $mail->setFrom('webdevafter30@gmail.com', 'Заказчик');
 //Кому отправка
 $mail->addAddress('webdevafter30@gmail.com');
 //Тема отправляемого сообщения
-$mail->Subject = 'Повiдомлення вiд ' . $_POST['name'] . '';
+if (trim(empty($_POST['order-message']))) {
+    $mail->Subject = 'Повiдомлення вiд ' . $_POST['name'] . '';
+} else {
+    $mail->Subject = 'Замовлення вiд ' . $_POST['name'] . '';
+};
 
 
 //Тело отправляемого сообщения
-$body = '<h1>Вот еще заказик подъехал!</h1>';
+// $body = '<h1>Вот еще заказик подъехал!</h1>';
 
 
 //Проверка пустых полей

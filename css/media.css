@@ -22,7 +22,7 @@
     text-align: center;
     width: 100%;
     height: 100vh;
-    background: var(--main-bg-col-ligth);
+    background: var(--main-bg-col-dark);
     transition: 0.5s;
     z-index: 999;
     border-top: 1px solid rgba(0, 0, 0, 0.2);
@@ -33,7 +33,7 @@
   }
 
   header ul li a {
-    color: #111;
+    /* color: var(--main-txt-col-light); */
     font-size: 24px;
     margin: 10px;
   }
@@ -58,9 +58,9 @@
     cursor: pointer;
   }
 
-  header.sticky .toggle {
+  /* header.sticky .toggle {
     filter: invert(1);
-  }
+  } */
 
   section {
     padding: 100px 50px;
@@ -149,6 +149,19 @@
   .container .card .card__btn {
     opacity: 1;
   }
+
+  .aboutBx{
+    margin-right: 5px;
+    margin-bottom: 20px;
+  }
+
+  .aboutLink__bx::after {
+    width: 20%;
+  }
+
+  .aboutLink__bx:hover::after {
+    width: 30%;
+  }
 }
 
 @media (max-width: 600px) {
@@ -171,9 +184,9 @@
 
   .socialMediaIcons h2,
   .testimonials__title {
-    font-size: 16px;
+    font-size: 24px;
     line-height: 32px;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
   }
 
   .testimonials .content .testimonialBx {
@@ -184,6 +197,14 @@
 
   .cart__container {
     margin-top: 40px;
+  }
+
+  .aboutLink__bx::after {
+    width: 25%;
+  }
+
+  .aboutLink__bx:hover::after {
+    width: 40%;
   }
 }
 
@@ -284,6 +305,23 @@
   .icon-plus {
     width: 25px;
   }
+
+  .aboutLink__bx::after {
+    width: 35%;
+  }
+
+  .aboutLink__bx:hover::after {
+    width: 55%;
+  }
+
+  .social-media a {
+    height: 125px;
+    width: 125px;
+  }
+
+  .social-media a i {
+    font-size: 60px;
+  }
 }
 
 @media screen and (max-width: 375px) {
@@ -319,5 +357,10 @@
   .prodTotalCost {
     font-weight: 600;
     font-size: 16px;
+  }
+
+  .about .aboutLink {
+    font-size: 20px;
+    letter-spacing: 1px;
   }
 }
