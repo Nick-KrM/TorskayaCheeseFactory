@@ -3,7 +3,7 @@
 
 :root {
   --main-bg-col-ligth: #e3edf7;
-  --main-bg-col-dark: rgb(22, 22, 22);
+  --main-bg-col-dark: rgba(20, 20, 20, 97%);
 
   --main-txt-col-light: #fff;
   --main-txt-col-dark: #555;
@@ -48,9 +48,9 @@ section {
 .banner {
   position: relative;
   min-height: 100vh;
-  background: url("../images/all_img/test-banner-pc.jpg");
+  background: url("../images/Banner_images/main_banner.jpg");
   background-size: cover;
-  background-position: right;
+  background-position: center;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -114,7 +114,7 @@ section {
   position: relative;
   background: var(--main-btn-bg-col);
   border: 1px solid rgb(0, 150, 0);
-  box-shadow: 4px 4px 3px -1px rgba(0, 190, 0, 50%);
+  /* box-shadow: 4px 4px 3px -1px rgba(0, 190, 0, 50%); */
   display: inline-block;
   color: #fff;
   margin-top: 20px;
@@ -126,10 +126,6 @@ section {
   font-weight: 500;
   border-radius: 8px;
 }
-
-/* .btn:hover {
-  background: var(--hover-btn-bg-col);
-} */
 
 /* HEADER */
 
@@ -284,7 +280,6 @@ img {
   display: flex;
   flex-direction: column;
   border: 1px solid rgba(0, 0, 0, 0.3);
-  /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); */
   box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.3);
   transition: 0.3s ease-in-out;
 }
@@ -393,7 +388,7 @@ img {
 .card__btn:hover {
   transition: background-color 0.3s ease 0s;
   background-color: var(--hover-btn-bg-col);
-  box-shadow: 3px 3px 2px -1px rgb(0, 190, 0);
+  /* box-shadow: 3px 3px 2px -1px rgb(0, 190, 0); */
   border: 1px solid rgb(0, 190, 0);
   cursor: pointer;
 }
@@ -626,7 +621,7 @@ a:hover .fa-telegram {
   font-size: 16px;
   border: none;
   outline: none;
-  background: rgba(34, 34, 34, 0.8);
+  background: rgba(40, 40, 40, 0.8);
   color: #fff;
   border-radius: 5px;
   resize: none;
@@ -743,6 +738,47 @@ a:hover .fa-telegram {
 }
 
 /* Cart.html */
+.banner__cart {
+  position: relative;
+}
+
+.banner__cart::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url("../images/Banner_images/Test_img_1.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+}
+
+.cart__section::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  content: "";
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3));
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  z-index: 1;
+}
+
+.cartOfAllGoods {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 15px;
+  box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.8);
+  width: 100%;
+  min-height: 100%;
+}
+
+/* .banner__dark::after {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 1));
+} */
 
 .cart__section,
 .order__section {
@@ -879,7 +915,7 @@ a:hover .fa-telegram {
   position: absolute;
   top: 0;
   left: 0;
-  background: url("../images/all_img/test-banner-pc.jpg");
+  background: url("../images/Banner_images/form_banner-pc.jpg");
   background-size: cover;
   background-position: right;
   width: 100%;

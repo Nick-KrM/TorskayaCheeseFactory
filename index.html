@@ -55,7 +55,10 @@
             <li class="cardBx">
               <div class="card">
                 <div class="imgBx">
-                  <img src="{{image}}" alt="{{name}}" class="card__image" />
+                  <picture>
+                    <source srcset="{{imgWebp}}" type="image/webp" />
+                    <img src="{{image}}" alt="{{name}}" class="card__image" />
+                  </picture>
                 </div>
                 <div class="content productsCard__content">
                   <h3 class="card__title">{{name}}</h3>
@@ -143,7 +146,7 @@
         <div class="content">
           <div class="testimonialBx">
             <p style="text-indent: 20px">
-              Не так давно, нам с семьей повезло побывать в замечательном и гостеприимном месте -  Торська Сироварня. Не могу не
+              Не так давно, нам с семьей повезло побывать в замечательном и гостеприимном месте - Торська Сироварня. Не могу не
               поделиться своими эмоциями
               <span class="_5mfr"
                 ><span

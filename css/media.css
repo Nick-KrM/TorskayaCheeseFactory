@@ -215,6 +215,7 @@
 
   .cart__product {
     border: solid 1px #999;
+    border-radius: 10px;
     display: grid;
     grid-template-columns: repeat(8, 12.5%);
     grid-template-rows: repeat(2, 50%);
@@ -235,11 +236,6 @@
     grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 3;
-  }
-
-  .prodPrevImg {
-    width: 100%;
-    height: 100%;
   }
 
   .product-title {

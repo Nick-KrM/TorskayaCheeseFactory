@@ -143,6 +143,4 @@ function setTotalAmount() {
     };
 
     totalAmountOfItemsBx.textContent = totalAmountOfAllGoods;
-    // const message = `Сумма всех товаров: ${totalAmountOfAllGoods}грн`;
-    // console.log(message);
 };

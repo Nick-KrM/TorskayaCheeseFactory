@@ -7,7 +7,7 @@
     "description": "Традиційний італійський сир с визріванням та рожевою скоринкою.",
     "price100": 40,
     "price1000": 400,
-    "image": "./images/all_img/cheese/Качотта.jpg"
+    "image": "./images/Products/cheese/Качотта.jpg"
   },
   {
     "availability": 1,
@@ -17,7 +17,7 @@
     "description": "Карачун - це авторський сир нашого Сировара. Виготовлений з коров'ячого молока, має приємний ніжний вершковий смак.Термін дозрівання не менше одного місяця. Добре смакує з сухими винами.",
     "price100": 40,
     "price1000": 400,
-    "image": "./images/all_img/cheese/Карачун.jpg"
+    "image": "./images/Products/cheese/Карачун.jpg"
   },
   {
     "availability": 1,
@@ -27,7 +27,7 @@
     "description": "Традиційний французський сир с визріванням та рожевою скоринкою.",
     "price100": 40,
     "price1000": 400,
-    "image": "./images/all_img/cheese/Скіф.jpg"
+    "image": "./images/Products/cheese/Скіф.jpg"
   },
   {
     "availability": 1,
@@ -37,7 +37,7 @@
     "description": "Традиційний французський сир с визріванням та біло-рожевою скоринкою.",
     "price100": 40,
     "price1000": 400,
-    "image": "./images/all_img/cheese/Реблошон.jpg"
+    "image": "./images/Products/cheese/Реблошон.jpg"
   },
   {
     "availability": 1,
@@ -47,7 +47,7 @@
     "description": "Традиційний голандський сир с визріванням.",
     "price100": 45,
     "price1000": 450,
-    "image": "./images/all_img/cheese/Гауда.jpg"
+    "image": "./images/Products/cheese/Гауда.jpg"
   },
   {
     "availability": 1,
@@ -57,7 +57,7 @@
     "description": "Традиційний англійський сир с визріванням.",
     "price100": 40,
     "price1000": 400,
-    "image": "./images/all_img/cheese/Кайрфіллі.jpg"
+    "image": "./images/Products/cheese/Кайрфіллі.jpg"
   },
   {
     "availability": 1,
@@ -67,7 +67,7 @@
     "description": "Традиційний англійський сир с визріванням та бандажом.",
     "price100": 50,
     "price1000": 500,
-    "image": "./images/all_img/cheese/Чеддер.jpg"
+    "image": "./images/Products/cheese/Чеддер.jpg"
   },
   {
     "availability": 1,
@@ -77,7 +77,7 @@
     "description": "Традиційний амеріканський сир з папрікою с визріванням.",
     "price100": 45,
     "price1000": 450,
-    "image": "./images/all_img/cheese/Монтеррей Джек.jpg"
+    "image": "./images/Products/cheese/Монтеррей Джек.jpg"
   },
   {
     "availability": 0,
@@ -87,7 +87,7 @@
     "description": "Свіжій ніжний молочний сир без визрівання (аналог Осетинського).",
     "price100": 30,
     "price1000": 300,
-    "image": "./images/all_img/cheese/Торський сир.jpg"
+    "image": "./images/Products/cheese/Торський сир.jpg"
   },
   {
     "availability": 0,
@@ -97,7 +97,7 @@
     "description": "Традиційний голандський сир с визріванням.",
     "price100": 45,
     "price1000": 450,
-    "image": "./images/all_img/cheese/Маасдам.jpg"
+    "image": "./images/Products/cheese/Маасдам.jpg"
   },
   {
     "availability": 0,
@@ -107,7 +107,7 @@
     "description": "Традиційний французський сир с визріванням та білою скоринкою.",
     "price100": 40,
     "price1000": 400,
-    "image": "./images/all_img/cheese/Каммамбер.jpg"
+    "image": "./images/Products/cheese/Каммамбер.jpg"
   },
   {
     "availability": 0,
@@ -117,6 +117,6 @@
     "description": "Авторський сир за принципом каммамбера з білою скоринкою.",
     "price100": 40,
     "price1000": 400,
-    "image": "./images/all_img/cheese/Люторс.jpg"
+    "image": "./images/Products/cheese/Люторс.jpg"
   }
 ]
