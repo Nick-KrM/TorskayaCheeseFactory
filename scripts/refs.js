@@ -3,7 +3,8 @@ const documentRefs = {
     cartIconCounter: document.querySelector('.carticon__counter'),
     cartIconBlock: document.querySelector('.carticon__showed'),
     prodListCart: document.querySelector('.cartOfAllGoods'),
-    orderFormInput: document.querySelector('.orderForm__input')
+    orderFormInput: document.querySelector('.orderForm__input'),
+    msgFormBx: document.querySelector('.formBx')
 };
 
 export default documentRefs;

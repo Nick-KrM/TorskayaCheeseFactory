@@ -347,12 +347,20 @@
             </div>
           </div>
           <div class="formBx">
-            <form action="">
+            <form action="sendmail.php" method="POST" class="msgForm">
               <h3>Напишіть нам</h3>
-              <input type="text" name="" placeholder="Прізвище ім'я по батькові" />
-              <input type="email" name="" placeholder="Email" id="" />
-              <textarea placeholder="Ваше повідомлення" name="" id="" cols="15" rows="5"></textarea>
-              <input type="submit" value="Надіслати" />
+              <input type="text" name="name" placeholder="Прізвище ім'я по батькові" class="form__input _require" />
+              <input type="email" name="email" placeholder="Email" id="" class="form__input _require _email" />
+              <textarea
+                placeholder="Ваше повідомлення"
+                name="message"
+                id=""
+                cols="15"
+                rows="5"
+                class="form__input _require"
+              ></textarea>
+              <!-- <input type="submit" value="Надіслати" class="form__button"/> -->
+              <button type="submit" class="form__button">Надіслати</button>
             </form>
           </div>
         </div>
@@ -380,25 +388,12 @@
         <p>Copyright © Nikita_KrM. All Right Reserved webdevafter30@gmail.com</p>
       </div>
     </footer>
-    <!-- <script src="./scripts/refs.js" type="module"></script> -->
+
     <script src="./scripts/availability.js" type="module"></script>
     <script src="./scripts/products.js" type="module"></script>
     <script src="./scripts/mainImplement.js" type="module"></script>
     <script src="./scripts/cartIcon.js" type="module"></script>
-    <!-- <script type="text/javascript">
-      window.addEventListener("scroll", function () {
-        const header = document.querySelector("header");
-        header.classList.toggle("sticky", window.scrollY > 0);
-        // console.log(header);
-      });
-
-      function toggleMenu() {
-        const menuToggle = document.querySelector(".toggle");
-        const nav = document.querySelector(".nav");
-        menuToggle.classList.toggle("active");
-        nav.classList.toggle("active");
-      }
-    </script> -->
+    <script src="./scripts/sendingMsg.js" type="module"></script>
     <script src="./scripts/windowScroll.js" type="module"></script>
   </body>
 </html>

@@ -28,7 +28,7 @@ $mail->setFrom('webdevafter30@gmail.com', 'Заказчик');
 //Кому отправка
 $mail->addAddress('webdevafter30@gmail.com');
 //Тема отправляемого сообщения
-$mail->Subject = 'Заказ от ' . $_POST['tel'] . '';
+$mail->Subject = 'Повiдомлення вiд ' . $_POST['name'] . '';
 
 
 //Тело отправляемого сообщения
@@ -65,7 +65,7 @@ $mail->Body = $body;
 if (!$mail->send()) {
     $message = 'Якась помилка, спробуйте ще раз (О_о)';
 } else {
-    $message = 'Ваше замовлення прийняте, чекайте дзвінка!';
+    $message = 'Дякую! Повідомлення надіслано.';
 }
 
 $response = ['message' => $message];

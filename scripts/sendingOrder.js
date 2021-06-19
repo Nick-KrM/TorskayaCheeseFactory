@@ -1,5 +1,5 @@
 'use strict'
-import orderMessage from './orderForm.js';
+// import orderMessage from './orderForm.js';
 import { updateData, saveData, clearData } from './cartIcon.js';
 
 
@@ -67,23 +67,6 @@ function sendingOrder() {
                     error++;
                 };
             };
-
-            // С проверкой заполненного поля почты
-
-            // if (input.classList.contains('_email')) {
-            //     if (emailTest(input)) {
-            //         formAddError(input);
-            //         error++;
-            //     };
-            // } else if (input.getAttribute('type') === 'checkbox' && input.checked === false) {
-            //     formAddError(input);
-            //     error++;
-            // } else {
-            //     if (input.value === '') {
-            //         formAddError(input);
-            //         error++;
-            //     };
-            // };
         };
         return error;
     };
@@ -98,16 +81,10 @@ function sendingOrder() {
         input.classList.remove('_error');
     };
 
-    // Функция проверки правильности вводимого email
     function emailTest(input) {
         return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
     };
 
 };
-
-//ф-я очистки корзины с изменением локального хранилища
-
-
-// console.log('Проверка импорта ниже ↓\n\n\n', orderMessage);
 
 document.addEventListener('DOMContentLoaded', sendingOrder);
