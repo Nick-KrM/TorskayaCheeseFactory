@@ -19,16 +19,12 @@ $mail->isSMTP();                                            //Send using SMTP
 $mail->Host = 'smtp.gmail.com';                     //Set the SMTP server to send through
 $mail->SMTPSecure = 'tls';         //Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
 $mail->SMTPAuth = true;                                   //Enable SMTP authentication
-// $mail->Username = 'webdevafter30@gmail.com';                     //SMTP username
-// $mail->Password = '16nick04';                               //SMTP password
 $mail->Username = 'tor.order.sender2021@gmail.com';
 $mail->Password = '$Ce7d16NjlsicKKJ';
 $mail->Port = 587;                                    //TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+$mail->setFrom('tor.order.sender2021@gmail.com', 'Заказчик'); //От кого письмо
+$mail->addAddress('Andr.tor.28@gmail.com'); //Кому отправка
 
-//От кого письмо
-$mail->setFrom('tor.order.sender2021@gmail.com', 'Заказчик');
-//Кому отправка
-$mail->addAddress('tor.order.sender2021@gmail.com');
 //Тема отправляемого сообщения
 if (trim(empty($_POST['order-message']))) {
     $mail->Subject = 'Повiдомлення вiд ' . $_POST['name'] . '';
@@ -67,7 +63,7 @@ if (trim(!empty($_POST['order-message']))) {
 $mail->Body = $body;
 
 
-//Отправляем
+//Отправка
 if (!$mail->send()) {
     $message = 'Якась помилка, спробуйте ще раз (О_о)';
 } else {

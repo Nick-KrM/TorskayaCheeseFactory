@@ -19,7 +19,6 @@ function handleBtnClick(e) {
     const target = e.target;
     let btnText = target.textContent;
 
-    // ловлю клик по кнопке "купить"
     if (target.nodeName !== "BUTTON") {
         return
     };
@@ -37,9 +36,13 @@ function handleBtnClick(e) {
             cartData.push(newProduct);
             saveData();
             console.log(`Товар летит в корзину`);
+
+            // Надо добавить pop-up
         } else {
-            console.log('Такой объект уже есть - выходим');
+            console.log('Такой объект уже есть - ничего не делаем');
             // alert(`Товар уже в корзине!`);
+
+            // Надо добавить pop-up
         };
     };
 
@@ -78,14 +81,19 @@ function clearData() {
 function cartVisibility() {
     if (cartIconCounter !== null) {
 
-        if (cartData.length === 0) {
-            console.log(`Нет товаров в корзине, прячем корзину`);
-            // cartIconBlock.classList.add('hidden');
-            // cartIconBlock.classList.remove('cartAnim');
-        } else {
-            cartIconBlock.classList.add('cartAnim');
+        if (cartData.length > 0) {
             cartIconBlock.classList.remove('hidden');
-        };
+            cartIconBlock.classList.add('cartAnim');
+        }
+
+        // if (cartData.length === 0) {
+        //     console.log(`Нет товаров в корзине, прячем корзину`);
+        //     // cartIconBlock.classList.add('hidden');
+        //     // cartIconBlock.classList.remove('cartAnim');
+        // } else {
+        //     cartIconBlock.classList.add('cartAnim');
+        //     cartIconBlock.classList.remove('hidden');
+        // };
     }
 };
 

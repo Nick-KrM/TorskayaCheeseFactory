@@ -16,7 +16,6 @@ for (const number of objTotalAmountOfItems) {
     totalAmountOfAllGoods += number;
 };
 
-// console.log(totalAmountOfItemsBx);
 if (totalAmountOfItemsBx !== null) {
     totalAmountOfItemsBx.textContent = totalAmountOfAllGoods;
 };
@@ -76,6 +75,7 @@ function weigthChangeBtn(e) {
             // Изменяю цену текстКонтента и в объекте
             selectedItemPrice.textContent = counterPriceValue;
             selectedItemObj.totalPriceSelectedItem = counterPriceValue;
+
             // Изменяю вес текстКонтента и в объекте
             selectedItemWeight.textContent = counterWeightValue;
             selectedItemObj.productWeight = counterWeightValue;
@@ -84,7 +84,6 @@ function weigthChangeBtn(e) {
             saveData();
         } else {
             // Присваиваю значение минимального заказа и цены
-
             selectedItemPrice.textContent = selectedItemObj.price300;
             selectedItemObj.totalPriceSelectedItem = selectedItemObj.price300;
 
@@ -98,8 +97,6 @@ function weigthChangeBtn(e) {
             saveData();
         };
     };
-
-    // console.log(selectedProdCart);
 
     if (targetBtnAssignment === 'delete') {
 

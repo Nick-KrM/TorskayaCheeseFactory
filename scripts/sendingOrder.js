@@ -38,6 +38,7 @@ function sendingOrder() {
                 //ф-я очистки корзины с изменением локального хранилища
                 let cartData;
                 clearData();
+                
                 // Возвращаем пользователя на главную страницу
                 location = location.href = "index.html#home";
             } else {
