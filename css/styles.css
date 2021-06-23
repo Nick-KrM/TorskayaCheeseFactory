@@ -34,7 +34,6 @@ li {
   list-style: none;
 }
 
-
 /* BANNER */
 
 section {
@@ -123,7 +122,6 @@ section {
   border-radius: 8px;
 }
 
-
 /* HEADER */
 
 header {
@@ -185,7 +183,6 @@ header ul li a:hover {
 /* header.sticky ul li a {
   color: #111;
 } */
-
 
 /* MAIN */
 /* heading  */
@@ -964,15 +961,188 @@ a:hover .fa-telegram {
   box-shadow: 1px 2px 0 #2196f3;
 }
 
+/* ABOUT */
+
+.gallery {
+  background: url(../images/Banner_images/cheese-pattern-background_opti.jpg) repeat;
+  position: relative;
+  z-index: 2;
+}
+
+.gallery::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  content: "";
+  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.1));
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  z-index: -1;
+}
+
+.lightbox__button--close,
+.lightbox__button--prev,
+.lightbox__button--next {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  /* border-radius: 25%; */
+  background-color: transparent;
+  color: var(--main-txt-col-dark);
+  cursor: pointer;
+  outline: none;
+  background-position: center;
+  background-size: 70%;
+  background-repeat: no-repeat;
+  visibility: hidden;
+  display: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.lightbox__button--close:hover,
+.lightbox__button--prev:hover,
+.lightbox__button--next:hover,
+.lightbox__button--close:focus,
+.lightbox__button--prev:focus,
+.lightbox__button--next:focus {
+  background-color: rgba(77, 77, 77, 0.5);
+  border-radius: 30%;
+  filter: invert(1);
+}
+
+.lightbox__button--prev {
+  top: 50%;
+  background-image: url("../images/Logo&Favicons/icon-back.svg");
+  z-index: 999;
+}
+.lightbox__button--next {
+  top: 50%;
+  background-image: url("../images/Logo&Favicons/icon-next.svg");
+  z-index: 999;
+}
+
+.lightbox__button--close {
+  top: 8%;
+  background-image: url("../images/Logo&Favicons/icon-close.svg");
+  z-index: 999;
+}
+
+.active .lightbox__button--prev,
+.active .lightbox__button--close,
+.active .lightbox__button--next {
+  right: 0;
+  visibility: visible;
+  display: flex;
+}
+
+.active .lightbox__button--prev {
+  left: 0;
+}
+
+.active .lightbox__button--close,
+.active .lightbox__button--next {
+  right: 0;
+}
+
+.gallery__container {
+  margin: 5vh auto;
+  max-width: 80%;
+  display: grid;
+  grid-gap: 0px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-auto-rows: 250px;
+  grid-auto-flow: dense;
+  box-shadow: 0 3px 15px black;
+}
+
+.gallery_imgBx {
+  text-align: center;
+  padding: 1rem 0;
+  color: white;
+  font-size: 3rem;
+  text-transform: uppercase;
+  background: rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  padding: 0;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.gallery_imgBx .gallery__image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  transition: all 0.5s ease 0s;
+}
+
+.gallery_imgBx.show::before {
+  content: "";
+  display: block;
+  position: fixed;
+  z-index: 555;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.gallery_imgBx.show .gallery__image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 70px 30px;
+  align-self: center;
+  object-fit: contain;
+  z-index: 666;
+  width: calc(100% - 60px);
+  height: calc(100% - 75px);
+  filter: drop-shadow(0 3px 15px black);
+  cursor: url("../images/Logo&Favicons/icon-close.svg"), grab; /* custom cursor to signal close on click */
+}
+
+.gallery_imgBx:not(.show):hover .gallery__image {
+  cursor: zoom-in;
+  transform: scale(1.3);
+}
+
+.horizontal {
+  grid-column: span 2;
+}
+
+.vertical {
+  grid-row: span 2;
+}
+
+.big {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.active .gallery_imgBx:not(.show) .gallery__image {
+  filter: blur(3px);
+}
+
 /* FOOTER */
 
 .copyright {
-  background: #000;
-  color: #222;
+  background: #111;
+  color: var(--main-txt-col-dark);
   text-align: center;
   padding: 10px;
   font-size: 12px;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
 }
 
 .copyright__min {

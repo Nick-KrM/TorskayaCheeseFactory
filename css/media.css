@@ -18,7 +18,7 @@
     top: 75px;
     left: -100%;
     display: block;
-    padding: 100px 50px;
+    padding: 70px 50px;
     text-align: center;
     width: 100%;
     height: 100vh;
@@ -41,7 +41,7 @@
   .toggle {
     width: 40px;
     height: 40px;
-    background: url("../images/portfolio/menu.png");
+    background: url("../images/Logo&Favicons/menu.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 30px;
@@ -51,7 +51,7 @@
   .toggle.active {
     width: 40px;
     height: 40px;
-    background: url("../images/portfolio/close.png");
+    background: url("../images/Logo&Favicons/close.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 25px;
@@ -150,7 +150,7 @@
     opacity: 1;
   }
 
-  .aboutBx{
+  .aboutBx {
     margin-right: 5px;
     margin-bottom: 20px;
   }
@@ -161,6 +161,18 @@
 
   .aboutLink__bx:hover::after {
     width: 30%;
+  }
+
+  .gallery_imgBx.show .gallery__image {
+    margin-top: 80px;
+  }
+
+  .lightbox__button--close {
+    top: 15%;
+  }
+
+  .lastImg {
+    display: none;
   }
 }
 
@@ -205,6 +217,14 @@
 
   .aboutLink__bx:hover::after {
     width: 40%;
+  }
+
+  .gallery__container {
+    max-width: 95%;
+  }
+
+  .copyright {
+    letter-spacing: 2px;
   }
 }
 
@@ -317,6 +337,10 @@
 
   .social-media a i {
     font-size: 60px;
+  }
+
+  .gallery__container {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
   }
 }
 

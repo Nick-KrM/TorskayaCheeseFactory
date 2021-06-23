@@ -4,15 +4,165 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About</title>
+    <link rel="icon" type="image/png" href="./images/Logo&Favicons/favicon-32x32.png" />
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/media.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <title>Торська сироварня</title>
+    <script src="./scripts/windowScroll.js" type="module"></script>
   </head>
-  <body>
-    <section>
-      <div class="aboutContent" style="display: flex; justify-content: center; font-size: 60px">
-        <h1>Тут будет видео и фото</h1>
-        <br />
+  <body id="body__about">
+    <header>
+      <a href="index.html#home" class="logo">Торська сироварня</a>
+      <div class="toggle"></div>
+      <ul class="nav">
+        <li><a href="index.html#home">Головна</a></li>
+        <li><a href="index.html#products">Продукція</a></li>
+        <li><a href="index.html#about">Про компанію</a></li>
+        <li><a href="index.html#socialMediaIcons">Соціальні мережі</a></li>
+        <li><a href="index.html#contact">Контакти</a></li>
+      </ul>
+    </header>
+    <main>
+      <section class="gallery">
+        <div class="galleryBx">
+          <button type="button" class="lightbox__button--prev" data-action="prevImgSrc"></button>
+
+          <button type="button" class="lightbox__button--next" data-action="nextImgSrc"></button>
+
+          <button type="button" class="lightbox__button--close" data-action="close-lightbox"></button>
+          <div class="gallery__container js-gallery">
+            <div class="gallery_imgBx">
+              <picture>
+                <source srcset="./images/all_img/cheese/skif2.webp" type="image/webp" />
+                <img class="gallery__image" src="./images/all_img/cheese/skif2.jpg" alt="" />
+              </picture>
+            </div>
+            <div class="gallery_imgBx vertical">
+              <picture>
+                <source srcset="./images/all_img/cow1.webp" type="image/webp" />
+                <img class="gallery__image" src="./images/all_img/cow1.jpg" alt="" />
+              </picture>
+            </div>
+            <div class="gallery_imgBx horizontal">
+              <picture>
+                <source srcset="./images/all_img/chef3.webp" type="image/webp" />
+                <img class="gallery__image" src="./images/all_img/chef3.jpg" alt="Сыр Гауда" />
+              </picture>
+            </div>
+            <div class="gallery_imgBx">
+              <picture>
+                <source srcset="./images/all_img/cow2.webp" type="image/webp" />
+                <img class="gallery__image" src="./images/all_img/cow2.jpg" alt="" />
+              </picture>
+            </div>
+            <div class="gallery_imgBx">
+              <picture>
+                <source srcset="./images/all_img/house.webp" type="image/webp" />
+                <img class="gallery__image" src="./images/all_img/house.jpg" alt="" />
+              </picture>
+            </div>
+            <div class="gallery_imgBx big">
+              <picture>
+                <source srcset="./images/all_img/chef.webp" type="image/webp" />
+                <img class="gallery__image" src="./images/all_img/chef.jpg" alt="" />
+              </picture>
+            </div>
+            <div class="gallery_imgBx">
+              <picture>
+                <source srcset="./images/all_img/excursion1.webp" type="image/webp" />
+                <img class="gallery__image" src="./images/all_img/excursion1.jpg" alt="" />
+              </picture>
+            </div>
+            <div class="gallery_imgBx vertical">
+              <picture>
+                <source srcset="./images/all_img/chef5.webp" type="image/webp" />
+                <img class="gallery__image" src="./images/all_img/chef5.jpg" alt="" />
+              </picture>
+            </div>
+            <div class="gallery_imgBx">
+              <picture>
+                <source srcset="./images/all_img/excursion2.webp" type="image/webp" />
+                <img class="gallery__image" src="./images/all_img/excursion2.jpg" alt="" />
+              </picture>
+            </div>
+            <div class="gallery_imgBx horizontal">
+              <picture>
+                <source srcset="./images/all_img/excursion3.webp" type="image/webp" />
+                <img class="gallery__image" src="./images/all_img/excursion3.jpg" alt="" />
+              </picture>
+            </div>
+            <div class="gallery_imgBx">
+              <picture>
+                <source srcset="./images/all_img/girl.webp" type="image/webp" />
+                <img class="gallery__image" src="./images/all_img/girl.jpg" alt="" />
+              </picture>
+            </div>
+            <div class="gallery_imgBx big">
+              <picture>
+                <source srcset="./images/all_img/cheese/lutorsHeart.webp" type="image/webp" />
+                <img class="gallery__image" src="./images/all_img/cheese/lutorsHeart.jpg" alt="" />
+              </picture>
+            </div>
+            <div class="gallery_imgBx">
+              <picture>
+                <source srcset="./images/all_img/cheese/Качота2.webp" type="image/webp" />
+                <img class="gallery__image" src="./images/all_img/cheese/Качота2.jpg" alt="" />
+              </picture>
+            </div>
+            <div class="gallery_imgBx horizontal">
+              <picture>
+                <source srcset="./images/all_img/chef2.webp" type="image/webp" />
+                <img class="gallery__image" src="./images/all_img/chef2.jpg" alt="" />
+              </picture>
+            </div>
+            <div class="gallery_imgBx">
+              <picture>
+                <source srcset="./images/all_img/chef4.webp" type="image/webp" />
+                <img class="gallery__image" src="./images/all_img/chef4.jpg" alt="" />
+              </picture>
+            </div>
+            <div class="gallery_imgBx big">
+              <picture>
+                <source srcset="./images/all_img/cheese/carachoon.webp" type="image/webp" />
+                <img class="gallery__image" src="./images/all_img/cheese/carachoon.jpg" alt="" />
+              </picture>
+            </div>
+            <div class="gallery_imgBx">
+              <picture>
+                <source srcset="./images/all_img/cheese/cheese.webp" type="image/webp" />
+                <img class="gallery__image" src="./images/all_img/cheese/cheese.jpg" alt="" />
+              </picture>
+            </div>
+            <div class="gallery_imgBx vertical">
+              <picture>
+                <source srcset="./images/all_img/torsTree.webp" type="image/webp" />
+                <img class="gallery__image" src="./images/all_img/torsTree.jpg" alt="" />
+              </picture>
+            </div>
+            <div class="gallery_imgBx">
+              <picture>
+                <source srcset="./images/all_img/cheese/Качота3.webp" type="image/webp" />
+                <img class="gallery__image" src="./images/all_img/cheese/Качота3.jpg" alt="" />
+              </picture>
+            </div>
+            <div class="gallery_imgBx lastImg">
+              <picture>
+                <source srcset="./images/all_img/bus.webp" type="image/webp" />
+                <img class="gallery__image" src="./images/all_img/bus.jpg" alt="" />
+              </picture>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="background__img"></div>
+    </main>
+    <footer>
+      <div class="copyright">
+        <p>Copyright © Nikita_KrM. All Right Reserved webdevafter30@gmail.com</p>
       </div>
-      <div style="display: flex; justify-content: center; font-size: 80px"><h2>Возможно какая-нибудь галерея</h2></div>
-    </section>
+    </footer>
+    <script src="./scripts/galleryModal.js" type="module"></script>
   </body>
 </html>
