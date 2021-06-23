@@ -128,12 +128,10 @@
     position: relative;
     bottom: 0px;
     font-size: 1.8em;
-    /* transition: 0.7s ease-in; */
   }
 
   .container .card {
     height: 360px;
-    /* margin-right: 0px; */
   }
 
   .container .card .imgBx {
@@ -288,7 +286,6 @@
 @media (max-width: 424px) {
   .textBx::after {
     transform: translate(-50%, -200%);
-    /* transform: translate(35%, -260%); */
   }
 
   .carticon__showed {
@@ -341,6 +338,11 @@
 
   .gallery__container {
     grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+
+  .gallery__container {
+    max-width: 95%;
+    grid-gap: 0px;
   }
 }
 

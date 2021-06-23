@@ -4,13 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-
     <link rel="icon" type="image/png" href="./images/Logo&Favicons/favicon-32x32.png" />
     <link rel="stylesheet" href="./css/normalize.css" />
-    <!-- <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" /> -->
     <link rel="stylesheet" href="./css/styles.css" />
     <link rel="stylesheet" href="./css/media.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
     <title>Торська сироварня</title>
   </head>
@@ -29,14 +28,11 @@
     <main>
       <section class="order__section">
         <div class="container formContainer">
-          <!-- <h1>Ваше замовлення:</h1> -->
-          <!-- <div id="order-message" class="alert alert-info"></div> -->
           <div class="formBx">
             <form action="sendmail.php" method="POST" class="orderForm">
-              <h3>Введіть ваші дані</h3>
+              <h3>Заповніть обов'язкові поля</h3>
               <input type="text" name="name" placeholder="Прізвище ім'я по батькові *" class="form__input _req" />
-              <input type="email" name="email" placeholder="Email:" id="" class="form__input" />
-              <!-- <label for="online_phone" style="color: white">Телефон:</label> -->
+              <input type="email" name="email" placeholder="Email:" class="form__input" />
               <input
                 id="online_phone"
                 name="tel"
@@ -49,16 +45,15 @@
                 placeholder="+38(___)___-__-__"
                 class="form__input _req"
               />
-              <input type="text" name="city" placeholder="Мiсто: *" id="" class="form__input _req" />
+              <input type="text" name="city" placeholder="Мiсто: *" class="form__input _req" />
               <input
                 type="text"
                 name="numberOfNewMail"
                 placeholder="Номер відділення Нової Пошти"
-                id=""
                 class="form__input _req"
               />
-              <textarea placeholder="Коментар" name="message" id="" cols="4" rows="4" class="form__input"></textarea>
-              <textarea placeholder="Коментар" name="order-message" id="" cols="4" rows="4" class="form__input orderForm__input hidden">Замовлення:</textarea>
+              <textarea placeholder="Коментар" name="message" cols="4" rows="4" class="form__input"></textarea>
+              <textarea placeholder="Коментар" name="order-message" cols="4" rows="4" class="form__input orderForm__input hidden">Замовлення:</textarea>
 
               <button type="submit" class="form__button">Замовити</button>
             </form>

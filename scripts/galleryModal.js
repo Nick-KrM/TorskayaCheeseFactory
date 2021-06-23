@@ -1,15 +1,10 @@
 'use strict'
 
-// TODO: touch events
-
 const divs = document.querySelectorAll('.gallery_imgBx');
 const body = document.querySelector('.gallery');
 const prev = document.querySelector('.lightbox__button--prev');
 const next = document.querySelector('.lightbox__button--next');
 const closeBtn = document.querySelector('.lightbox__button--close');
-// const show = document.querySelector('.show');
-// const events = document.createEvent('HTMLEvents');
-
 
 const checkPrev = () => document.querySelector('.lightbox__button--prev').classList.contains('show');
 const checkNext = () => document.querySelector('.lightbox__button--next').classList.contains('show');
@@ -31,7 +26,6 @@ Array.prototype.slice.call(divs).forEach(function (el) {
 prev.addEventListener('click', scrollingBack);
 next.addEventListener('click', scrollingForward);
 closeBtn.addEventListener('click', closeLightBox);
-
 
 
 //Дополнительно: закрытие по "ESC" и клику не по картинке

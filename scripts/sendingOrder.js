@@ -1,5 +1,5 @@
 'use strict'
-// import orderMessage from './orderForm.js';
+
 import { updateData, saveData, clearData } from './cartIcon.js';
 
 
